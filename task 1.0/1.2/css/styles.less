@@ -1,11 +1,115 @@
 @main_color: #2980b9;
-@text_color: #ecf0f1;
+@text_color: #34495e;
+@text_color_light: #ecf0f1;
+@logo_text_size: 40px;
+@menu_text_size: 20px;
+@page_width: 900px;
+@header_padding: 30px;
+@presentation_padding: 30px;
+@button_height: 40px;
 
-h1 {
-  background-color: @main_color;
-  color: @text_color;
+*, html, body {
+  font-family: Courier, monospace;
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  vertical-align:middle;
+}
 
+.main_backgroud_color {
+  background-color: @main_color;
+}
+
+.menu {
+  display: flex;
+  color: @text_color;
+  letter-spacing: -1px;
+  font-size: @menu_text_size;
+  text-align: right;
+  width: auto;
+  padding-right: @header_padding;
+}
+
+.menu > p {
+  margin: 10px;
+  margin-right: 20px;
+  text-align: right;
+  font-weight: 800;
+}
+
+header{
+  min-width: 900px;
+  height: auto;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.logo {
+    margin-left: @header_padding;
+    font-size: @logo_text_size;
+    color: @text_color;
+    font-weight: bold;
+    text-align: right;
+}
+
+.presentation {
+  .main_backgroud_color;
+  height: auto;
+  display: inline-flex;
+  vertical-align: bottom;
+  color: @text_color_light;
+}
+
+.presentation > div {
+  width: 50%;
+  height: auto;
+  text-align: center;
+  padding-top: @presentation_padding;
+  padding-bottom: @presentation_padding;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.buy p{
+  text-align: justify;
+  padding-right: @presentation_padding * 2;
+}
+
+.features {
+
+}
+
+.contact_us {
+  .main_backgroud_color;
+}
+header, .features, .contact_us, .presentation {
+  width: @page_width;
+  margin: 0 auto;
+}
+
+h2 {
+  padding-bottom: 20px;
+  text-align: left;
+}
+
+.button {
+  margin-top: 20px;
+  width: 40%;
+  height: @button_height;
+  background-color: @main_color;
+  border: 2px solid #fff;
+  color: inherit;
+  border-radius: 5px;
+  font-size: 30px;
+  letter-spacing: -2px;
+}
+
+p {
+  margin: 0;
 }

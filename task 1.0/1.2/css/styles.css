@@ -1,0 +1,93 @@
+*,
+html,
+body {
+  font-family: Courier, monospace;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  vertical-align: middle;
+}
+.main_backgroud_color {
+  background-color: #2980b9;
+}
+.menu {
+  display: flex;
+  color: #34495e;
+  letter-spacing: -1px;
+  font-size: 20px;
+  text-align: right;
+  width: auto;
+  padding-right: 30px;
+}
+.menu > p {
+  margin: 10px;
+  margin-right: 20px;
+  text-align: right;
+  font-weight: 800;
+}
+header {
+  min-width: 900px;
+  height: auto;
+  display: inline-flex;
+  justify-content: space-between;
+}
+.logo {
+  margin-left: 30px;
+  font-size: 40px;
+  color: #34495e;
+  font-weight: bold;
+  text-align: right;
+}
+.presentation {
+  background-color: #2980b9;
+  height: auto;
+  display: inline-flex;
+  vertical-align: bottom;
+  color: #ecf0f1;
+}
+.presentation > div {
+  width: 50%;
+  height: auto;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.buy p {
+  text-align: justify;
+  padding-right: 60px;
+}
+.contact_us {
+  background-color: #2980b9;
+}
+header,
+.features,
+.contact_us,
+.presentation {
+  width: 900px;
+  margin: 0 auto;
+}
+h2 {
+  padding-bottom: 20px;
+  text-align: left;
+}
+.button {
+  margin-top: 20px;
+  width: 40%;
+  height: 40px;
+  background-color: #2980b9;
+  border: 2px solid #fff;
+  color: inherit;
+  border-radius: 5px;
+  font-size: 30px;
+  letter-spacing: -2px;
+}
+p {
+  margin: 0;
+}

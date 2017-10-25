@@ -11,6 +11,7 @@ html, body {
 }
 
 header > p {
+  padding: 10px;
   font-size: 40px;
 }
 

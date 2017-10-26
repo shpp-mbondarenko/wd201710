@@ -95,6 +95,7 @@ header{
 
 .contact_us {
   .main_backgroud_color;
+  // border: 1px solid #000;
 }
 header, .features, .contact_us, .presentation {
   width: @page_width;
@@ -114,6 +115,14 @@ header, .features, .contact_us, .presentation {
 h2 {
   padding-bottom: 20px;
   text-align: left;
+  color: @main_color_light;
+}
+
+.contact_us h2 {
+  padding-top: @presentation_padding;
+  padding-bottom: @presentation_padding;
+  text-align: center;
+  color: @main_color_light;
 }
 
 h4 {
@@ -124,16 +133,24 @@ h4 {
   width: 100%;
   .main_backgroud_color
 }
+
 .container_light {
   .main_backgroud_color_light;
 }
+
+.buy .button {
+  width: 40%;
+}
+
 .button {
   margin-top: 20px;
-  width: 40%;
+  width: auto;
+  padding-left: 15px;
+  padding-right: 15px;
   height: @button_height;
   background-color: @main_color;
   border: 2px solid #fff;
-  color: inherit;
+  color: @main_color_light;
   border-radius: 5px;
   font-size: 30px;
   letter-spacing: -2px;
@@ -151,5 +168,37 @@ h4 {
   font-size: 70px !important;
   color: @main_color;
   margin-bottom: 30px;
-  border-radius: 70px !important;
+  // border-radius: 70px !important;
+}
+
+form {
+  width: @page_width*0.6;
+  display: inline-block;
+  color: @main_color_light;
+  font-size: 20px;
+  // border: 1px solid #0f0;
+}
+
+form > div {
+  display: inline-flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+textarea, input {
+  width: @page_width*0.8;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+  width: @page_width*0.8;
+}
+
+input {
+  height: 30px;
+}
+
+p {
+  font-size: 18px;
 }

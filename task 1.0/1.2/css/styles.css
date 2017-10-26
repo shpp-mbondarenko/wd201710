@@ -93,6 +93,13 @@ header,
 h2 {
   padding-bottom: 20px;
   text-align: left;
+  color: #ecf0f1;
+}
+.contact_us h2 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  color: #ecf0f1;
 }
 h4 {
   margin-bottom: 20px;
@@ -104,13 +111,18 @@ h4 {
 .container_light {
   background-color: #ecf0f1;
 }
+.buy .button {
+  width: 40%;
+}
 .button {
   margin-top: 20px;
-  width: 40%;
+  width: auto;
+  padding-left: 15px;
+  padding-right: 15px;
   height: 40px;
   background-color: #2980b9;
   border: 2px solid #fff;
-  color: inherit;
+  color: #ecf0f1;
   border-radius: 5px;
   font-size: 30px;
   letter-spacing: -2px;
@@ -125,5 +137,30 @@ h4 {
   font-size: 70px !important;
   color: #2980b9;
   margin-bottom: 30px;
-  border-radius: 70px !important;
+}
+form {
+  width: 576px;
+  display: inline-block;
+  color: #ecf0f1;
+  font-size: 20px;
+}
+form > div {
+  display: inline-flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+textarea,
+input {
+  width: 768px;
+}
+textarea {
+  height: 100px;
+  resize: none;
+  width: 768px;
+}
+input {
+  height: 30px;
+}
+p {
+  font-size: 18px;
 }

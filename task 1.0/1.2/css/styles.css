@@ -4,6 +4,7 @@ body {
   font-family: Courier, monospace;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 body {
   display: flex;
@@ -14,6 +15,9 @@ body {
 .main_backgroud_color {
   background-color: #2980b9;
 }
+.main_backgroud_color_light {
+  background-color: #ecf0f1;
+}
 .menu {
   display: flex;
   color: #34495e;
@@ -21,26 +25,25 @@ body {
   font-size: 20px;
   text-align: right;
   width: auto;
-  padding-right: 30px;
+  justify-content: flex-start;
 }
 .menu > p {
   margin: 10px;
-  margin-right: 20px;
   text-align: right;
   font-weight: 800;
+  white-space: nowrap;
 }
 header {
-  min-width: 900px;
+  min-width: 960px;
   height: auto;
   display: inline-flex;
   justify-content: space-between;
 }
 .logo {
-  margin-left: 30px;
   font-size: 40px;
   color: #34495e;
   font-weight: bold;
-  text-align: right;
+  width: auto;
 }
 .presentation {
   background-color: #2980b9;
@@ -60,8 +63,14 @@ header {
   justify-content: center;
 }
 .buy p {
+  padding-right: 30px;
+  padding-left: 0px;
   text-align: justify;
   padding-right: 60px;
+}
+.features {
+  display: inline-flex;
+  flex-direction: row;
 }
 .contact_us {
   background-color: #2980b9;
@@ -70,12 +79,30 @@ header,
 .features,
 .contact_us,
 .presentation {
-  width: 900px;
+  width: 960px;
   margin: 0 auto;
+}
+.one_feature {
+  width: 320px;
+  margin: 0;
+  height: auto;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 h2 {
   padding-bottom: 20px;
   text-align: left;
+}
+h4 {
+  margin-bottom: 20px;
+}
+.container {
+  width: 100%;
+  background-color: #2980b9;
+}
+.container_light {
+  background-color: #ecf0f1;
 }
 .button {
   margin-top: 20px;
@@ -88,6 +115,15 @@ h2 {
   font-size: 30px;
   letter-spacing: -2px;
 }
-p {
-  margin: 0;
+.one_feature p {
+  width: auto;
+  margin-right: 5px;
+  margin-left: 5px;
+  text-align: justify;
+}
+.fa {
+  font-size: 70px !important;
+  color: #2980b9;
+  margin-bottom: 30px;
+  border-radius: 70px !important;
 }

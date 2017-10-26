@@ -1,9 +1,10 @@
 @main_color: #2980b9;
+@main_color_light: #ecf0f1;
 @text_color: #34495e;
 @text_color_light: #ecf0f1;
 @logo_text_size: 40px;
 @menu_text_size: 20px;
-@page_width: 900px;
+@page_width: 960px;
 @header_padding: 30px;
 @presentation_padding: 30px;
 @button_height: 40px;
@@ -12,6 +13,7 @@
   font-family: Courier, monospace;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 body {
@@ -25,6 +27,10 @@ body {
   background-color: @main_color;
 }
 
+.main_backgroud_color_light {
+  background-color: @main_color_light;
+}
+
 .menu {
   display: flex;
   color: @text_color;
@@ -32,29 +38,28 @@ body {
   font-size: @menu_text_size;
   text-align: right;
   width: auto;
-  padding-right: @header_padding;
+  justify-content: flex-start;
 }
 
 .menu > p {
   margin: 10px;
-  margin-right: 20px;
   text-align: right;
   font-weight: 800;
+  white-space: nowrap;
 }
 
 header{
-  min-width: 900px;
+  min-width: @page_width;
   height: auto;
   display: inline-flex;
   justify-content: space-between;
 }
 
 .logo {
-    margin-left: @header_padding;
     font-size: @logo_text_size;
     color: @text_color;
     font-weight: bold;
-    text-align: right;
+    width: auto;
 }
 
 .presentation {
@@ -77,12 +82,15 @@ header{
 }
 
 .buy p{
+  padding-right: 30px;
+  padding-left: 0px;
   text-align: justify;
   padding-right: @presentation_padding * 2;
 }
 
 .features {
-
+  display: inline-flex;
+  flex-direction: row;
 }
 
 .contact_us {
@@ -93,11 +101,32 @@ header, .features, .contact_us, .presentation {
   margin: 0 auto;
 }
 
+.one_feature {
+  width: @page_width/3;
+  margin: 0;
+  height: auto;
+  text-align: center;
+  padding-top: @presentation_padding;
+  padding-bottom: @presentation_padding;
+  // border: 1px solid #000;
+}
+
 h2 {
   padding-bottom: 20px;
   text-align: left;
 }
 
+h4 {
+  margin-bottom: 20px;
+}
+
+.container {
+  width: 100%;
+  .main_backgroud_color
+}
+.container_light {
+  .main_backgroud_color_light;
+}
 .button {
   margin-top: 20px;
   width: 40%;
@@ -110,6 +139,17 @@ h2 {
   letter-spacing: -2px;
 }
 
-p {
-  margin: 0;
+.one_feature p {
+  width: auto;
+  margin-right: 5px;
+  margin-left: 5px;
+  text-align: justify;
+  // border: 1px solid #0f0;
+}
+// icons
+.fa {
+  font-size: 70px !important;
+  color: @main_color;
+  margin-bottom: 30px;
+  border-radius: 70px !important;
 }

@@ -1,0 +1,19 @@
+.main_backgroud_color {
+  background-color: #2980b9;
+}
+.main_backgroud_color_light {
+  background-color: #ecf0f1;
+}
+/* @media*/
+@media screen and (max-width: 430px) {
+  p {
+    color: red;
+  }
+  .presentation {
+    background-color: #2980b9;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    color: #ecf0f1;
+  }
+}

@@ -8,6 +8,7 @@
 @header_padding: 30px;
 @presentation_padding: 30px;
 @button_height: 40px;
+@p_margin: 10px;
 
 .main_backgroud_color {
   background-color: @main_color;
@@ -17,18 +18,177 @@
   background-color: @main_color_light;
 }
 
-/* @media*/
-@media screen and (max-width:430px) {
-  p {
-    color: red;
+
+@media screen and (min-width:100px) and (max-width:768px) {
+  *, html, body {
+    font-family: Courier, monospace;
+    margin: 0;
+    padding: 0;
+    width: 100%;
   }
 
-  .presentation {
-    .main_backgroud_color;
-    height: auto;
+  body {
     display: flex;
-    flex-direction: row;
-    color: @text_color_light;
+    flex-direction: column;
+  }
+//header
+  header {
+    max-width: auto;
+    display: flex;
+    width: auto;
+    flex-direction: column;
+  }
+
+  .menu {
+    display: flex;
+    color: @text_color;
+    letter-spacing: -1px;
+    font-size: @menu_text_size;
+    text-align: center;
+    width: auto;
+    justify-content: space-around;
+  }
+
+  .menu > p {
+    margin: 5px;
+    text-align: center;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+
+  .logo {
+      font-size: @logo_text_size;
+      color: @text_color;
+      font-weight: bold;
+      text-align: center;
+      width: auto;
+      padding-top: @p_margin;
+  }
+//end header
+//presentation
+.presentation {
+  .main_backgroud_color;
+  height: auto;
+  display: inline-flex;
+  vertical-align: bottom;
+  flex-direction: column;
+  color: @text_color_light;
+}
+
+.presentation > div {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding-top: @presentation_padding;
+  padding-bottom: @presentation_padding;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.buy p{
+  width: auto;
+  text-align: justify;
+}
+
+.buy .button {
+  width: auto;
+  margin: @p_margin;
+}
+
+//end presentation
+//features
+  .features {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: center;
+    vertical-align:middle;
+  }
+
+  .one_feature p {
+    width: auto;
+    text-align: justify;
+    margin-bottom: 15px;
+    // border: 1px solid #0f0;
+  }
+  // icons
+  .fa {
+    font-size: 70px !important;
+    color: @main_color;
+    margin-bottom: @p_margin;
+    margin-top: @p_margin;
+    // border-radius: 70px !important;
+  }
+
+//end features
+//contact_us
+.contact_us {
+  .main_backgroud_color;
+  width: 100%;
+  padding-top: 8px;
+  text-align: center;
+  // border: 1px solid #000;
+}
+
+form {
+  width: 100%;
+  display: inline-block;
+  color: @main_color_light;
+  font-size: 20px;
+  // border: 1px solid #0f0;
+}
+
+form > div {
+  display: inline-flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+textarea, input {
+  width: @page_width*0.8;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+  width: 195%;
+}
+
+input {
+  height: 30px;
+}
+.contact_us .button {
+  width: 90%;
+}
+
+//end contact_us
+  .button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: @p_margin;
+    margin-right: @p_margin;
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: @button_height;
+    background-color: @main_color;
+    border: 2px solid #fff;
+    color: @main_color_light;
+    border-radius: 5px;
+    font-size: 30px;
+    letter-spacing: -2px;
+  }
+
+  h2 {
+    margin-left: @p_margin;
+    margin-right: @p_margin;
+    text-align: center;
+    color: @main_color_light;
+  }
+
+  p {
+    margin-left: @p_margin;
+    margin-right: @p_margin;
   }
 
 }

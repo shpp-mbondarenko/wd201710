@@ -3,7 +3,6 @@ $( document ).ready(function() {
     //t1();
     //t2();
     //t3();
-    //t4();
 });
 
 function t1 () {
@@ -63,21 +62,75 @@ function t3() {
 }
 
 function t4() {
-  var hou = 0, min = 0, sec = 0;
+  var hou = 0, min = 0, sec = 0, remainder = 0;
   //get val from input
   var i = parseInt($("#sec_to_format_4").val());
-  console.log(i + " - value " + typeof(i));
   if(!isNaN(parseFloat(i)) && isFinite(i)){
-    hou = i/60;
-    i -= hou*60;
-    min = i/60;
-    i -= min*60;
-    sec = i;
-
-    $(".result_4").text("result is: " + hou + ":"
+    // ask question about "78dfkjgh" !!!!
+    i = Math.abs(i);
+    if (i >= 60) {
+      remainder = i % 60;
+      min = (i - remainder) / 60;
+      sec = remainder;
+      if (min >= 60) {
+        remainder = min % 60;
+        hou = (min - remainder) / 60;
+        min = remainder;
+      }
+    } else {
+      sec = i;
+    }
+    $(".result_4").text("Result is: " + hou + ":"
     + min + ":" + sec + "");
   } else {
     $(".result_4").text("Wrong type of input");
+    $("#sec_to_format_4").value = '';
     return;
   }
+}
+
+function t5() {
+  //get val from input
+  var i = parseInt($("#years5").val());
+  var word = "";
+  var y = i;
+  if(!isNaN(parseFloat(i)) && isFinite(i)){
+    // год года
+    i = Math.abs(i);
+    if (i >= 5 && i <= 21) {
+      word = "год!";
+        $(".result_5").text("Result: Вам " + y + " " + word);
+        return;
+    }
+    i %= 10;
+    if (i == 2 || i == 3 || i == 4) {
+      word = "года!";
+    } else {
+      word = "год!";
+    }
+
+    $(".result_5").text("Result: Вам " + y + " " + word);
+  } else {
+    $(".result_5").text("Wrong type of input");
+    return;
+  }
+}
+
+function t6() {
+
+}
+
+function t10() {
+  var s = 0;
+  var i = $("#num10").val().toString();
+  console.log("i=" + i);
+    for (var j = 0; j < i.length; j++) {
+      s += (+(i).charAt(j));
+    }
+    if (!isNaN(s)) {
+      $(".result_10").text("Sum is " + s);
+    } else {
+      $(".result_10").text("Wrong input");
+    }
+
 }

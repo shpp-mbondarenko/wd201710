@@ -120,6 +120,59 @@ function t6() {
 
 }
 
+function t8() {
+    var res = "";
+    var b = true;
+    var wh = "<div class='chessW'></div>";
+    var bl = "<div class='chessB'></div>";
+    var row = parseInt($("#row8").val());
+    var col = parseInt($("#col8").val());
+    for (var i = 0; i < row; i++) {
+      res += "<div style='display: flex;flex-direction:row;'>";
+      if (row%2 == 0) {
+        b = !b;
+      }
+      for (var j = 0; j < col; j++) {
+        if (b) {
+          res += bl;
+          b = !b;
+        } else {
+          res += wh;
+          b = !b;
+        }
+      }
+      res += "</div>";
+    }
+    $(".result_8").html(res);
+}
+
+function t9() {
+  var resP = 0; resE = 0;
+  var f = parseInt($("#numOfFlat").val());
+  var p = parseInt($("#numOfP").val());
+  var e = parseInt($("#numOfE").val());
+  var k = parseInt($("#numOfK").val());
+  if ((p*k*e) < f) {
+    $(".result_9").text("That flat is not exists. Enter less value");
+    return;
+  }
+  for (var i = 1; i <= p; i++) {
+    if ((f <= (e*k*i)) && (f > (e*k*(i-1)))) {
+      resP = i;
+      console.log("Resp = "+resP);
+      for (var j = 1; j <= e; j++) {
+        var pp = e*k*(resP-1);
+        console.log("f="+f+" pp =" + (pp+(k*j)) + " pp(-1)=" +(pp+k*(j-1))+ " j="+j);
+        if (f <= pp+(k*j) && f > pp+(k*(j-1))) {
+          resE = j;
+          console.log("IN HERE = "+resE);
+        }
+      }
+    }
+  }
+  $(".result_9").text("You live in " + resP + " entrance and " + resE + " floor!");
+}
+
 function t10() {
   var s = 0;
   var i = $("#num10").val().toString();
@@ -133,4 +186,17 @@ function t10() {
       $(".result_10").text("Wrong input");
     }
 
+}
+
+function t11() {
+  var res = $("#links11").val().toString();
+  res = res.replace(/https\:\/\//gi, "");
+  res = res.replace(/http\:\/\//gi, "");
+  var j = "";
+  var str = res.split(",");
+  str = str.sort();
+  for (var i = 0; i < str.length; i++) {
+    j += "<li>" + str[i] + "</li>";
+  }
+  $(".result_11").html(j);
 }

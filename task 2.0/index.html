@@ -42,12 +42,30 @@
     <p class="task">Task 7</p>
     <p class="result_7"></p>
   </div>
-  <div>
+  <div
     <p class="task">Task 8</p>
-    <p class="result_8"></p>
+  <label for="">Enter num of rows</label>
+    <input type="text" id="row8">
+    <label for=""> and num of col</label>
+    <input type="text" id="col8">
+    <button type="button" onclick="t8()" id="button_find_sum10">Draw</button>
+    <div class="result_8"></div>
   </div>
   <div>
-    <p class="task">Task 9</p>
+    <p class="task">Task 9 - Определить номер подъезда и этаж по номеру квартиры</p>
+    <div style="border:1px solid #F00;display:flex;flex-direction:column;">
+      <label for="numOfP">Количество подъездов</label>
+      <input type="text" id="numOfP" name="" value="10">
+      <label for="numOfK"> Количествоквартир на пролете</label>
+      <input type="text" id="numOfK" name="" value="10">
+      <label for="numOfE">Количество этажей дома</label>
+      <input type="text" id="numOfE" name="" value="10">
+    </div>
+    <div style="border:1px solid #0f0;">
+      <label for="numOfFlat">Номер квартиры</label>
+      <input type="text" id="numOfFlat" name="" value="10">
+    </div>
+    <button type="button" onclick="t9()" id="button9">Tell me</button>
     <p class="result_9"></p>
   </div>
   <div>
@@ -57,8 +75,9 @@
     <p class="result_10"></p>
   </div>
   <div>
-    <p class="task">Task 11</p>
-    <p class="result_11"></p>
+    <p class="task">Task 11 - удалить http:// и https:// из ссылок и вывести их отсортированным по алфавиту списком ссылок.</p>
+    <textarea onfocus="this.value='';" rows="8" cols="80" onblur="t11()" id="links11">Enter links</textarea>
+    <ul class="result_11"></ul>
   </div>
 
 

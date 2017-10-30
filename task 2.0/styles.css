@@ -7,10 +7,38 @@ body {
 
 body {
   font-size: 30px;
+  background-color: #95a5a6;
 }
 
-body div {
+body > div {
   width: 100wh;
   margin 15px;
   border-bottom: 1px solid #000;
+}
+
+.chessW {
+  background-color: white;
+  border: 1px solid #0f0;
+  margin: 0;
+  padding: 0;
+  height: 10px;
+  width: 10px;
+}
+
+.chessB {
+  background-color: black;
+  border: 1px solid #0f0;
+  margin: 0;
+  padding: 0;
+  height: 10px;
+  width: 10px;
+}
+
+.result_8 {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+background-color: #bdc3c7; 
 }

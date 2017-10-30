@@ -122,40 +122,62 @@ function t6() {
   startTime = $("#startTime6").val();
   endTime = $("#endTime6").val();
   endDate = new Date($("#endDate6").val());
-  console.log("startDate6 - "+startDate);
-  console.log("startTime6 - "+startTime);
-  console.log("endDate6 - "+endDate);
-  console.log("endTime6 - "+endTime);
   var years,mon,day,hou,min,sec;
-  day = Math.ceil((endDate-startDate) / (1000 * 3600 * 24));
-  console.log("diff = "+  day);
   var startH = new Date("01/01/2007 " + startTime).getHours();
   var endH = new Date("01/01/2007 " + endTime).getHours();
   var startM = new Date("01/01/2007 " + startTime).getMinutes();
   var endM = new Date("01/01/2007 " + endTime).getMinutes();
   var startS = new Date("01/01/2007 " + startTime).getSeconds();
   var endS = new Date("01/01/2007 " + endTime).getSeconds();
-
-  console.log("diff in time Hou - " + startH + " endHou - " + endH);
-  console.log("diff in time min - " + startM + " endMin - " + endM);
-  console.log("diff in time Sec  - " + startS + " endSec - " + endS);
-  console.log("diff time  - " + new Date(startH - endH));
-
   var sd = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate(),
                       startH, startM, startS);
   var ed = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate(),
                       endH, endM, endS);
-  console.log("sd - " + sd);
-  console.log("ed - " + ed);
-  console.log("DIFF - " + (ed - sd)/ (1000 * 3600 * 24));
-  // if (startS < endS) {
-  //
-  // }
+  var diff = ed - sd;
+  // mon = Math.floor(diff/1000/60/60/24/30);
+  years = Math.floor(diff/1000/60/60/24/365);
+  // console.log("sec = "+sec+" min = " + min + " hou = " + hou + " days = "+ day +
+  // " month = "+mon+ " years = "+years);
+  diff = diff - years*1000*60*60*24*365;
+  // console.log("diff2="+diff);
+  mon = Math.floor(diff/1000/60/60/24/30);
+  diff = diff - mon*1000*60*60*24*30;
+  // console.log("diff3="+diff);
+  day = Math.floor(diff/1000/60/60/24);
+  diff = diff - day*1000*60*60*24;
+  // console.log("diff4="+diff);
+  hou = Math.floor(diff/1000/60/60);
+  diff = diff - hou*1000*60*60;
+  // console.log("diff5="+diff);
+  min = Math.floor(diff/1000/60);
+  diff = diff - min*1000*60;
+  // console.log("diff6="+diff);
+  sec = Math.floor(diff/1000);
+  diff = diff - sec*1000;
+  // console.log("diff7="+diff);
+  $(".result_6").text("Diff is: sec = "+sec+" min = " + min + " hou = " + hou + " days = "+ day +
+  " month = "+mon+ " years = "+years);
 }
 
 function t7() {
-  var date = $("#zodiac7").val();
+  var date = new Date($("#zodiac7").val());
+  var img = "";
+  var zsign = "";
+  var z = ['Козерог','Водолей','Рыбы','Овен','Телец',
+            'Близнецы','Рак','Лев','Дева','Весы','Скорпион','Стрелец'];
+  var d = [19,19,20,20,21,21,22,23,23,22,22,21];
+
+  var mo = date.getMonth();
+  var day = date.getDate();
+  zsign = z[mo];
+  img = mo.toString();
+  if (day > d[mo]) {
+    zsign = z[mo+1];
+    img = (mo+1).toString();
+  }
   console.log("date - "+date);
+  console.log("mo - "+mo);
+  $(".result_7").html("<img height='42' width='42' src='img\/"+img+".png' alt='justtext'><p>"+zsign+"</p>");
 }
 
 function t8() {

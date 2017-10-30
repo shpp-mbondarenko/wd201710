@@ -117,7 +117,45 @@ function t5() {
 }
 
 function t6() {
+  var startDate, startTime, endTime, endDate;
+  startDate = new Date($("#startDate6").val());
+  startTime = $("#startTime6").val();
+  endTime = $("#endTime6").val();
+  endDate = new Date($("#endDate6").val());
+  console.log("startDate6 - "+startDate);
+  console.log("startTime6 - "+startTime);
+  console.log("endDate6 - "+endDate);
+  console.log("endTime6 - "+endTime);
+  var years,mon,day,hou,min,sec;
+  day = Math.ceil((endDate-startDate) / (1000 * 3600 * 24));
+  console.log("diff = "+  day);
+  var startH = new Date("01/01/2007 " + startTime).getHours();
+  var endH = new Date("01/01/2007 " + endTime).getHours();
+  var startM = new Date("01/01/2007 " + startTime).getMinutes();
+  var endM = new Date("01/01/2007 " + endTime).getMinutes();
+  var startS = new Date("01/01/2007 " + startTime).getSeconds();
+  var endS = new Date("01/01/2007 " + endTime).getSeconds();
 
+  console.log("diff in time Hou - " + startH + " endHou - " + endH);
+  console.log("diff in time min - " + startM + " endMin - " + endM);
+  console.log("diff in time Sec  - " + startS + " endSec - " + endS);
+  console.log("diff time  - " + new Date(startH - endH));
+
+  var sd = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate(),
+                      startH, startM, startS);
+  var ed = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate(),
+                      endH, endM, endS);
+  console.log("sd - " + sd);
+  console.log("ed - " + ed);
+  console.log("DIFF - " + (ed - sd)/ (1000 * 3600 * 24));
+  // if (startS < endS) {
+  //
+  // }
+}
+
+function t7() {
+  var date = $("#zodiac7").val();
+  console.log("date - "+date);
 }
 
 function t8() {
@@ -129,7 +167,7 @@ function t8() {
     var col = parseInt($("#col8").val());
     for (var i = 0; i < row; i++) {
       res += "<div style='display: flex;flex-direction:row;'>";
-      if (row%2 == 0) {
+      if (col%2 == 0) {
         b = !b;
       }
       for (var j = 0; j < col; j++) {

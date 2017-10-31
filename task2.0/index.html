@@ -10,31 +10,44 @@
   <title>JS TASK</title>
 </head>
 <body>
-  <div>
+  <div style="display:flex;flex-direction: row;flex-wrap:wrap;justify-content:center;background-color:#ecf0f1">
+    <button type="button" onclick="showMe('ht1')">Show Task 1</button>
+    <button type="button" onclick="showMe('ht2')">Show Task 2</button>
+    <button type="button" onclick="showMe('ht3')">Show Task 3</button>
+    <button type="button" onclick="showMe('ht4')">Show Task 4</button>
+    <button type="button" onclick="showMe('ht5')">Show Task 5</button>
+    <button type="button" onclick="showMe('ht6')">Show Task 6</button>
+    <button type="button" onclick="showMe('ht7')">Show Task 7</button>
+    <button type="button" onclick="showMe('ht8')">Show Task 8</button>
+    <button type="button" onclick="showMe('ht9')">Show Task 9</button>
+    <button type="button" onclick="showMe('ht10')">Show Task 10</button>
+    <button type="button" onclick="showMe('ht11')">Show Task 11</button>
+  </div>
+  <div id="ht1">
     <p class="task">Task 1 - Сумма от -1000 до 1000</p>
     <p class="result_1"></p>
   </div>
-  <div>
+  <div id="ht2">
     <p class="task">Task 2- Сумма от -1000 до 1000 c 2,3,7</p>
     <p class="result_2"></p>
   </div>
-  <div>
+  <div id="ht3">
     <p class="task">Task 3 - 50 звездочек</p>
     <div class="result_3"></div>
   </div>
-  <div>
+  <div id="ht4">
     <p class="task">Task 4 - Пользователь вводит время в секундах. Вывести в формате: hh:mm:ss</p>
-    <input onfocus="$this.value='';" type="text" id="sec_to_format_4" value="">
+    <input onfocus="this.value='';" type="text" id="sec_to_format_4" value="">
     <button type="button" onclick="t4()" id="button_sec_to_format_4" name="button">Format</button>
     <p class="result_4"></p>
   </div>
-  <div>
+  <div id="ht5">
     <p class="task">Task 5 - Для указанного возраста студента вывести фразу</p>
     <input type="text" id="years5">
     <button type="button" onclick="t5()" id="button_years5" name="button">Show</button>
     <p class="result_5"></p>
   </div>
-  <div>
+  <div id="ht6">
     <p class="task">Task 6 - Вычислить промежуток времени</p>
     <div class="" style="background-color:#0f0;">
       <label for="startDate6">Enter start date and time</label>
@@ -49,14 +62,14 @@
     <button type="button" onclick="t6()">Calculate period</button>
     <p class="result_6"></p>
   </div>
-  <div>
+  <div id="ht7">
     <p class="task">Task 7 - Знаки зодиака</p>
     <label for="zodiac7">Enter date</label>
     <input type="date" id="zodiac7">
     <button type="button" onclick="t7()">Show zodiac</button>
     <div class="result_7"></div>
   </div>
-  <div>
+  <div id="ht8">
     <p class="task">Task 8 - Шахматная доска</p>
     <label for="row8">Enter num of rows</label>
     <input type="text" id="row8">
@@ -65,14 +78,14 @@
     <button type="button" onclick="t8()">Draw</button>
     <div class="result_8"></div>
   </div>
-  <div>
+  <div id="ht9">
     <p class="task">Task 9 - Определить номер подъезда и этаж по номеру квартиры</p>
     <div style="border:1px solid #F00;display:flex;flex-direction:column;">
-      <label for="numOfP">Количество подъездов</label>
+      <label for="numOfP">Кол-во подъездов</label>
       <input type="text" id="numOfP" name="" value="10">
-      <label for="numOfK"> Количествоквартир на пролете</label>
+      <label for="numOfK"> Кол-во квартир на пролете</label>
       <input type="text" id="numOfK" name="" value="10">
-      <label for="numOfE">Количество этажей дома</label>
+      <label for="numOfE">Кол-во этажей дома</label>
       <input type="text" id="numOfE" name="" value="10">
     </div>
     <div style="border:1px solid #0f0;">
@@ -82,18 +95,16 @@
     <button type="button" onclick="t9()" id="button9">Tell me</button>
     <p class="result_9"></p>
   </div>
-  <div>
+  <div id="ht10">
     <p class="task">Task 10 - Найти сумму цифр введённого числа</p>
     <input type="text" id="num10">
     <button type="button" onclick="t10()" id="button_find_sum10">Calculate</button>
     <p class="result_10"></p>
   </div>
-  <div>
+  <div id="ht11">
     <p class="task">Task 11 - удалить http:// и https:// из ссылок и вывести их отсортированным по алфавиту списком ссылок.</p>
     <textarea onfocus="this.value='';" rows="8" cols="80" onblur="t11()" id="links11">Enter links</textarea>
     <ul class="result_11"></ul>
   </div>
-
-
 </body>
 </html>

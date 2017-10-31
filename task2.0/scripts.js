@@ -1,8 +1,8 @@
-$( document ).ready(function() {
-    console.log( "ready!" );
-    //t1();
-    //t2();
-    //t3();
+document.addEventListener('DOMContentLoaded', function(){
+  t1();
+  t2();
+  t3();
+  console.log("ready");
 });
 
 function t1 () {
@@ -11,9 +11,8 @@ function t1 () {
   while (a < 1001) {
     s += a;
     a++;
-    //console.log("a=" + a);
   }
-  $(".result_1").text("Сумма = " + s);
+  document.getElementsByClassName("result_1")[0].innerHTML = "Сумма = " + s;
 }
 
 function t2 () {
@@ -22,30 +21,30 @@ function t2 () {
   while (a < 0) {
     a += 3;
     s += a;
-    console.log("a=" + a);
+    //console.log("a=" + a);
     a += 4;
     s += a;
-    console.log("a=" + a);
+    //console.log("a=" + a);
     a++;
     s += a;
-    console.log("a=" + a);
+    //console.log("a=" + a);
     a += 2;
-    console.log("a=" + a + "--------------");
+    //console.log("a=" + a + "--------------");
   }
   while (a < 1000) {
     a += 2;
     s += a;
-    console.log("a=" + a);
+    //console.log("a=" + a);
     a += 1;
     s += a;
-    console.log("a=" + a);
+    //console.log("a=" + a);
     a += 4;
     s += a;
-    console.log("a=" + a);
+    //console.log("a=" + a);
     a += 3;
-    console.log("a=" + a + "--------------");
+    //console.log("a=" + a + "--------------");
   }
-  $(".result_2").text("Сумма чисел зак. на 2,3,7 = " + s);
+  document.getElementsByClassName("result_2")[0].innerHTML = "Сумма чисел зак. на 2,3,7 = " + s;
 }
 
 function t3() {
@@ -58,13 +57,13 @@ function t3() {
     res += "<li>"+asterisk+"</li>";
     asterisk = "";
   }
-  $(".result_3").html("<ul>"+res+"</ul>");
+  document.getElementsByClassName("result_3")[0].innerHTML = "<ul>"+res+"</ul>";
 }
 
 function t4() {
   var hou = 0, min = 0, sec = 0, remainder = 0;
   //get val from input
-  var i = parseInt($("#sec_to_format_4").val());
+  var i = parseInt(document.getElementById("sec_to_format_4").value);
   if(!isNaN(parseFloat(i)) && isFinite(i)){
     // ask question about "78dfkjgh" !!!!
     i = Math.abs(i);
@@ -80,26 +79,24 @@ function t4() {
     } else {
       sec = i;
     }
-    $(".result_4").text("Result is: " + hou + ":"
-    + min + ":" + sec + "");
+    document.getElementsByClassName("result_4")[0].innerHTML = "Result is: " + hou + ":"
+    + min + ":" + sec;
   } else {
-    $(".result_4").text("Wrong type of input");
-    $("#sec_to_format_4").value = '';
+    document.getElementsByClassName("result_4")[0].innerHTML = "Wrong type of input";
     return;
   }
 }
 
 function t5() {
   //get val from input
-  var i = parseInt($("#years5").val());
+  var i = parseInt(document.getElementById("years5").value);
   var word = "";
   var y = i;
   if(!isNaN(parseFloat(i)) && isFinite(i)){
-    // год года
     i = Math.abs(i);
     if (i >= 5 && i <= 21) {
       word = "год!";
-        $(".result_5").text("Result: Вам " + y + " " + word);
+        document.getElementsByClassName("result_5")[0].innerHTML = "Result: Вам " + y + " " + word;
         return;
     }
     i %= 10;
@@ -108,20 +105,19 @@ function t5() {
     } else {
       word = "год!";
     }
-
-    $(".result_5").text("Result: Вам " + y + " " + word);
+    document.getElementsByClassName("result_5")[0].innerHTML = "Result: Вам " + y + " " + word;
   } else {
-    $(".result_5").text("Wrong type of input");
+    document.getElementsByClassName("result_5")[0].innerHTML = "Wrong type of input";
     return;
   }
 }
 
 function t6() {
   var startDate, startTime, endTime, endDate;
-  startDate = new Date($("#startDate6").val());
-  startTime = $("#startTime6").val();
-  endTime = $("#endTime6").val();
-  endDate = new Date($("#endDate6").val());
+  startDate = new Date(document.getElementById("startDate6").value);
+  startTime = document.getElementById("startTime6").value;
+  endTime = document.getElementById("endTime6").value;
+  endDate = new Date(document.getElementById("endDate6").value);
   var years,mon,day,hou,min,sec;
   var startH = new Date("01/01/2007 " + startTime).getHours();
   var endH = new Date("01/01/2007 " + endTime).getHours();
@@ -155,12 +151,12 @@ function t6() {
   sec = Math.floor(diff/1000);
   diff = diff - sec*1000;
   // console.log("diff7="+diff);
-  $(".result_6").text("Diff is: sec = "+sec+" min = " + min + " hou = " + hou + " days = "+ day +
-  " month = "+mon+ " years = "+years);
+  document.getElementsByClassName("result_6")[0].innerHTML = "Diff is: sec = "+sec+" min = " + min + " hou = " + hou + " days = "+ day +
+  " month = "+mon+ " years = "+years;
 }
 
 function t7() {
-  var date = new Date($("#zodiac7").val());
+  var date = new Date(document.getElementById("zodiac7").value);
   var img = "";
   var zsign = "";
   var z = ['Козерог','Водолей','Рыбы','Овен','Телец',
@@ -175,9 +171,7 @@ function t7() {
     zsign = z[mo+1];
     img = (mo+1).toString();
   }
-  console.log("date - "+date);
-  console.log("mo - "+mo);
-  $(".result_7").html("<img height='42' width='42' src='img\/"+img+".png' alt='justtext'><p>"+zsign+"</p>");
+  document.getElementsByClassName("result_7")[0].innerHTML = "<img height='42' width='42' src='img\/"+img+".png' alt='justtext'><p>"+zsign+"</p>";
 }
 
 function t8() {
@@ -185,8 +179,8 @@ function t8() {
     var b = true;
     var wh = "<div class='chessW'></div>";
     var bl = "<div class='chessB'></div>";
-    var row = parseInt($("#row8").val());
-    var col = parseInt($("#col8").val());
+    var row = parseInt(document.getElementById("row8").value);
+    var col = parseInt(document.getElementById("col8").value);
     for (var i = 0; i < row; i++) {
       res += "<div style='display: flex;flex-direction:row;'>";
       if (col%2 == 0) {
@@ -203,53 +197,48 @@ function t8() {
       }
       res += "</div>";
     }
-    $(".result_8").html(res);
+    document.getElementsByClassName("result_8")[0].innerHTML = res;
 }
 
 function t9() {
   var resP = 0; resE = 0;
-  var f = parseInt($("#numOfFlat").val());
-  var p = parseInt($("#numOfP").val());
-  var e = parseInt($("#numOfE").val());
-  var k = parseInt($("#numOfK").val());
+  var f = parseInt(document.getElementById("numOfFlat").value);
+  var p = parseInt(document.getElementById("numOfP").value);
+  var e = parseInt(document.getElementById("numOfE").value);
+  var k = parseInt(document.getElementById("numOfK").value);
   if ((p*k*e) < f) {
-    $(".result_9").text("That flat is not exists. Enter less value");
+    document.getElementsByClassName("result_9")[0].innerHTML = "That flat is not exists. Enter less value";
     return;
   }
   for (var i = 1; i <= p; i++) {
     if ((f <= (e*k*i)) && (f > (e*k*(i-1)))) {
       resP = i;
-      console.log("Resp = "+resP);
       for (var j = 1; j <= e; j++) {
         var pp = e*k*(resP-1);
-        console.log("f="+f+" pp =" + (pp+(k*j)) + " pp(-1)=" +(pp+k*(j-1))+ " j="+j);
         if (f <= pp+(k*j) && f > pp+(k*(j-1))) {
           resE = j;
-          console.log("IN HERE = "+resE);
         }
       }
     }
   }
-  $(".result_9").text("You live in " + resP + " entrance and " + resE + " floor!");
+  document.getElementsByClassName("result_9")[0].innerHTML = "You live in " + resP + " entrance and " + resE + " floor!";
 }
 
 function t10() {
   var s = 0;
-  var i = $("#num10").val().toString();
-  console.log("i=" + i);
+  var i = document.getElementById("num10").value.toString();
     for (var j = 0; j < i.length; j++) {
       s += (+(i).charAt(j));
     }
     if (!isNaN(s)) {
-      $(".result_10").text("Sum is " + s);
+      document.getElementsByClassName("result_10")[0].innerHTML = "Sum is " + s;
     } else {
-      $(".result_10").text("Wrong input");
+      document.getElementsByClassName("result_10")[0].innerHTML = "Wrong input";
     }
-
 }
 
 function t11() {
-  var res = $("#links11").val().toString();
+  var res = document.getElementById("links11").value.toString();
   res = res.replace(/https\:\/\//gi, "");
   res = res.replace(/http\:\/\//gi, "");
   var j = "";
@@ -258,5 +247,10 @@ function t11() {
   for (var i = 0; i < str.length; i++) {
     j += "<li>" + str[i] + "</li>";
   }
-  $(".result_11").html(j);
+  document.getElementsByClassName("result_11")[0].innerHTML = j;
+}
+
+function showMe(id) {
+  var div = document.getElementById(id);
+  div.style.display = div.style.display == "block" ? "none" : "block";
 }

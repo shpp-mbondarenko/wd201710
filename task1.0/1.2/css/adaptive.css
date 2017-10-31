@@ -32,11 +32,13 @@
     width: auto;
     justify-content: space-around;
   }
-  .menu > p {
+  .menu > a {
     margin: 5px;
     text-align: center;
     font-weight: 800;
     white-space: nowrap;
+    color: #34495e;
+    text-decoration: none;
   }
   .logo {
     font-size: 40px;
@@ -146,5 +148,16 @@
   p {
     margin-left: 10px;
     margin-right: 10px;
+  }
+  .radio {
+    display: flex;
+    flex-direction: row;
+  }
+  .checkbox p {
+    width: 200%;
+  }
+  .checkbox {
+    display: flex;
+    flex-direction: row;
   }
 }

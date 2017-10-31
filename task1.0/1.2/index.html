@@ -14,9 +14,9 @@
   <header>
     <div class="logo">LOGO++</div>
     <div class="menu">
-      <p>PRODUCTS</p>
-      <p>ABOUT US</p>
-      <p>CONTACT US</p>
+      <a href="https://www.google.com.ua">PRODUCTS</a>
+      <a href="https://www.google.com.ua">ABOUT US</a>
+      <a href="https://www.google.com.ua">CONTACT US</a>
     </div>
   </header>
   <div class="container">
@@ -83,6 +83,10 @@
           <input type="email" id="mail" name="user_mail">
         </div>
         <div>
+          <label for="psw">Password:</label>
+          <input type="password" id="psw" name="user_mail">
+        </div>
+        <div>
           <label for="mail">Your country:</label>
           <select name="cars">
             <option value="UA">UA</option>
@@ -95,6 +99,18 @@
           <label for="msg">Message:</label>
           <textarea id="msg" rows="4" cols="50"></textarea>
         </div>
+        <div class="radio">
+          <input type="radio" name="gender" value="pika" checked> Pikachu <br>
+          <input type="radio" name="gender" value="bul"> Bulbasaur <br>
+          <input type="radio" name="gender" value="char"> Squirtle <br>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" name="vehicle1" value="Bike"> <p>I have a bike</p>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" name="vehicle2" value="Car"> <p>I have a car</p>
+        </div>
+        <input type="reset" class="button">
         <button type="button" name="button" class="button">Send email!</button>
       </form>
     </div>

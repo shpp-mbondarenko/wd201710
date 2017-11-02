@@ -66,7 +66,6 @@
     justify-content: center;
   }
   .buy p {
-    padding-right: 30px;
     padding-left: 0px;
     text-align: justify;
     padding-right: 60px;
@@ -176,4 +175,25 @@
     display: flex;
     flex-direction: row;
   }
+
+  #myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: 2px solid #ecf0f1; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #2980b9; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    width: 50px;
+    height: auto;
+}
+
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
 }

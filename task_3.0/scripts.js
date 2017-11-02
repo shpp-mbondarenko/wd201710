@@ -20,7 +20,7 @@ function outOptions() {
 }
 
 function clearSelection() {
-  $('.chosenOption').text("Choose option...");
+  $('.chosenOption').text("Choose pokemon...");
   $('.clearSelection').css('visibility', 'hidden');
   $('#headImg').attr("src", "img\/pokeball.png");
 }

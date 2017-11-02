@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 20px;
+}
+
+p {
+  padding: 5px;
+}
+
+.container {
+  width: 100%;
+  background-color: #4E342E;
+  display: flex;
+  justify-content: center;
+  align-items:flex-start;
+  min-height: 100vh;
+}
+
+.customSelect {
+  background-color: #ecf0f1;
+  border-radius: 3px;
+  width: 300px;
+  height: auto;
+  color: #7f8c8d;
+
+  margin-top: 200px;
+}
+
+
+.chosenOption {
+  text-align: left;
+  width: 100%;
+}
+
+.CSItem {
+
+}
+
+.CSHeader {
+  display: flex;
+  justify-content: center;
+}
+
+.clearSelection {
+  visibility: hidden;
+}
+
+.clearSelection:hover {
+   background: #7f8c8d;
+   color: #ecf0f1;
+}
+
+.options > .dispNone {
+  display: flex;
+  flex-direction: row;
+}
+
+.dispNone:hover {
+  background: #7f8c8d;
+  color: #ecf0f1;
+}
+
+
+img {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+}
+
+.greyimg {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray; /* IE 6-9 */
+}
+
+.nogreyimg {
+  -webkit-filter: none;
+  -moz-filter: none;
+  -ms-filter: none;
+  -o-filter: none;
+  filter: none;
+  filter: none; /* IE 6-9 */
+}

@@ -27,7 +27,6 @@ function clearSelection() {
 
 function chooseOptions(str) {
   $('.chosenOption').text(str);
-  var u = "img\/"+str.toLowerCase()+".png";
   $('#headImg').attr("src", "img\/"+str.toLowerCase()+".png");
   $('.clearSelection').css('visibility', 'visible');
   $(".dispNone").slideToggle(500);

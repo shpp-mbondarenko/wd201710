@@ -17,6 +17,23 @@ function topFunction() {
 }
 
 function scrollToAnchor(anchor_id){
-    var tag = $("#"+anchor_id+"");
-    $('html,body').animate({scrollTop: tag.offset().top},'slow');
+  var windowHeight = $(window).height();
+  var cont = $("#"+anchor_id);
+  var contHeight = cont.height();
+  var contOffset = cont.offset().top;
+  var offset;
+  if (contOffset < (windowHeight / 2)) {
+    offset = contOffset;
+    console.log("offset = contOffset;");
+  } else {
+    if (contHeight < windowHeight) {
+      offset = contOffset - ((windowHeight / 2) - (contHeight / 2));
+      console.log("contHeight < windowHeight");
+    }
+    else {
+      offset = contOffset - (windowHeight / 4);
+      console.log("contOffset - (windowHeight / 4);");
+    }
+  }
+  $('html,body').animate({scrollTop: offset},'slow');
 }

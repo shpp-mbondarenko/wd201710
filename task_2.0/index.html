@@ -25,14 +25,17 @@
   </div>
   <div id="ht1">
     <p class="task">Task 1 - Сумма от -1000 до 1000</p>
+    <button type="button" onclick="t1()" >Посчитать</button>
     <p class="result_1"></p>
   </div>
   <div id="ht2">
     <p class="task">Task 2- Сумма от -1000 до 1000 c 2,3,7</p>
+    <button type="button" onclick="t2()" >Посчитать</button>
     <p class="result_2"></p>
   </div>
   <div id="ht3">
     <p class="task">Task 3 - 50 звездочек</p>
+    <button type="button" onclick="t3()">Нарисовать</button>
     <div class="result_3"></div>
   </div>
   <div id="ht4">
@@ -49,33 +52,33 @@
   </div>
   <div id="ht6">
     <p class="task">Task 6 - Вычислить промежуток времени</p>
-    <div class="" style="background-color:#0f0;">
-      <label for="startDate6">Enter start date and time</label>
+    <div class="" style="background-color:#FFE082;">
+      <label for="startDate6">Введите начальную дату и время</label>
       <input type="date" id="startDate6">
       <input type="time" step="1" id="startTime6">
     </div>
-    <div class="" style="background-color:#ff0;">
-      <label for="endDate6">Enter start date and time</label>
+    <div class="" style="background-color:#FFCC80;">
+      <label for="endDate6">Введите конечную дату и время</label>
       <input type="date" id="endDate6">
       <input type="time" step="1" id="endTime6">
     </div>
-    <button type="button" onclick="t6()">Calculate period</button>
+    <button type="button" onclick="t6()">Посчитать период</button>
     <p class="result_6"></p>
   </div>
   <div id="ht7">
     <p class="task">Task 7 - Знаки зодиака</p>
-    <label for="zodiac7">Enter date</label>
+    <label for="zodiac7">ВВедите дату</label>
     <input type="date" id="zodiac7">
-    <button type="button" onclick="t7()">Show zodiac</button>
+    <button type="button" onclick="t7()">Показать знак зодиака</button>
     <div class="result_7"></div>
   </div>
   <div id="ht8">
     <p class="task">Task 8 - Шахматная доска</p>
-    <label for="row8">Enter num of rows</label>
+    <label for="row8">Введите количество рядов</label>
     <input type="text" id="row8">
-    <label for="col8"> and num of col</label>
+    <label for="col8"> и количество колонок</label>
     <input type="text" id="col8">
-    <button type="button" onclick="t8()">Draw</button>
+    <button type="button" onclick="t8()">Рисовать</button>
     <div class="result_8"></div>
   </div>
   <div id="ht9">
@@ -92,18 +95,20 @@
       <label for="numOfFlat">Номер квартиры</label>
       <input type="text" id="numOfFlat" name="" value="10">
     </div>
-    <button type="button" onclick="t9()" id="button9">Tell me</button>
+    <button type="button" onclick="t9()" id="button9">Показать</button>
     <p class="result_9"></p>
   </div>
   <div id="ht10">
     <p class="task">Task 10 - Найти сумму цифр введённого числа</p>
     <input type="text" id="num10">
-    <button type="button" onclick="t10()" id="button_find_sum10">Calculate</button>
+    <button type="button" onclick="t10()" id="button_find_sum10">Посчитать</button>
     <p class="result_10"></p>
   </div>
   <div id="ht11">
-    <p class="task">Task 11 - удалить http:// и https:// из ссылок и вывести их отсортированным по алфавиту списком ссылок.</p>
-    <textarea onfocus="this.value='';" rows="8" cols="80" onblur="t11()" id="links11">Enter links</textarea>
+    <p class="task">Task 11 - удалить http:// и https://
+       из ссылок и вывести их отсортированным по алфавиту
+        списком ссылок.</p>
+    <textarea onfocus="this.value='';" rows="8" cols="80" onblur="t11()" id="links11">Введите ссылки через запятую</textarea>
     <ul class="result_11"></ul>
   </div>
 </body>

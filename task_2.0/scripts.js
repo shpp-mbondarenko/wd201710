@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
-  t1();
-  t2();
-  t3();
-  console.log("ready");
+
 });
 
 function t1 () {
@@ -63,8 +60,12 @@ function t3() {
 function t4() {
   var hou = 0, min = 0, sec = 0, remainder = 0;
   //get val from input
-  var i = parseInt(document.getElementById("sec_to_format_4").value);
-  if(!isNaN(parseFloat(i)) && isFinite(i)){
+  var i = document.getElementById("sec_to_format_4").value;
+  if (i.length > 10) {
+      document.getElementsByClassName("result_4")[0].innerHTML = "Слишком большое число";
+    return;
+  }
+  if(!isNaN(+(i))){
     // ask question about "78dfkjgh" !!!!
     i = Math.abs(i);
     if (i >= 60) {
@@ -79,24 +80,31 @@ function t4() {
     } else {
       sec = i;
     }
-    document.getElementsByClassName("result_4")[0].innerHTML = "Result is: " + hou + ":"
-    + min + ":" + sec;
+    if (hou < 10) { hou = "0" + hou.toString();    }
+    if (min < 10) { min = "0" + min.toString();    }
+    if (sec < 10) { sec = "0" + sec.toString();    }
+    document.getElementsByClassName("result_4")[0].innerHTML =
+    "Результат: " + hou + ":"+ min + ":" + sec;
   } else {
-    document.getElementsByClassName("result_4")[0].innerHTML = "Wrong type of input";
+    document.getElementsByClassName("result_4")[0].innerHTML = "Неверные данные введены";
     return;
   }
 }
 
 function t5() {
   //get val from input
-  var i = parseInt(document.getElementById("years5").value);
+  var i = document.getElementById("years5").value;
   var word = "";
   var y = i;
-  if(!isNaN(parseFloat(i)) && isFinite(i)){
+  if (i.length > 3) {
+      document.getElementsByClassName("result_5")[0].innerHTML = "Слишком большое число";
+    return;
+  }
+  if(!isNaN(+(i))){
     i = Math.abs(i);
     if (i >= 5 && i <= 21) {
       word = "год!";
-        document.getElementsByClassName("result_5")[0].innerHTML = "Result: Вам " + y + " " + word;
+        document.getElementsByClassName("result_5")[0].innerHTML = "Результат: Вам " + y + " " + word;
         return;
     }
     i %= 10;
@@ -105,9 +113,9 @@ function t5() {
     } else {
       word = "год!";
     }
-    document.getElementsByClassName("result_5")[0].innerHTML = "Result: Вам " + y + " " + word;
+    document.getElementsByClassName("result_5")[0].innerHTML = "Результат: Вам " + y + " " + word;
   } else {
-    document.getElementsByClassName("result_5")[0].innerHTML = "Wrong type of input";
+    document.getElementsByClassName("result_5")[0].innerHTML = "Неверные данные";
     return;
   }
 }
@@ -119,6 +127,10 @@ function t6() {
   endTime = document.getElementById("endTime6").value;
   endDate = new Date(document.getElementById("endDate6").value);
   var years,mon,day,hou,min,sec;
+  if (startDate.getFullYear() > 2200 || 2200 < endDate.getFullYear()) {
+    document.getElementsByClassName("result_6")[0].innerHTML = "Слишком большой год";
+    return;
+  }  
   var startH = new Date("01/01/2007 " + startTime).getHours();
   var endH = new Date("01/01/2007 " + endTime).getHours();
   var startM = new Date("01/01/2007 " + startTime).getMinutes();
@@ -130,6 +142,13 @@ function t6() {
   var ed = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate(),
                       endH, endM, endS);
   var diff = ed - sd;
+  console.log("разница - " +diff);
+  console.log("ed - " +ed);
+  console.log("sd - " +sd);
+  if (ed < sd) {
+    document.getElementsByClassName("result_6")[0].innerHTML = "Конечная дата слишком мала1";
+    return;
+  }
   // mon = Math.floor(diff/1000/60/60/24/30);
   years = Math.floor(diff/1000/60/60/24/365);
   // console.log("sec = "+sec+" min = " + min + " hou = " + hou + " days = "+ day +
@@ -151,8 +170,8 @@ function t6() {
   sec = Math.floor(diff/1000);
   diff = diff - sec*1000;
   // console.log("diff7="+diff);
-  document.getElementsByClassName("result_6")[0].innerHTML = "Diff is: sec = "+sec+" min = " + min + " hou = " + hou + " days = "+ day +
-  " month = "+mon+ " years = "+years;
+  document.getElementsByClassName("result_6")[0].innerHTML = "Разница: Год = " + years
+  + ", месяци = " + mon + ", дни = " + day + ", часы = " + hou + ", минуты = " + min + ", секунды = " + sec;
 }
 
 function t7() {
@@ -162,7 +181,6 @@ function t7() {
   var z = ['Козерог','Водолей','Рыбы','Овен','Телец',
             'Близнецы','Рак','Лев','Дева','Весы','Скорпион','Стрелец'];
   var d = [19,19,20,20,21,21,22,23,23,22,22,21];
-
   var mo = date.getMonth();
   var day = date.getDate();
   zsign = z[mo];
@@ -179,8 +197,16 @@ function t8() {
     var b = true;
     var wh = "<div class='chessW'></div>";
     var bl = "<div class='chessB'></div>";
-    var row = parseInt(document.getElementById("row8").value);
-    var col = parseInt(document.getElementById("col8").value);
+    var row = document.getElementById("row8").value;
+    var col = document.getElementById("col8").value;
+    if (isNaN(+row) || isNaN(+col)) {
+      document.getElementsByClassName("result_8")[0].innerHTML = "Вы ввели не число.";
+      return;
+    }
+    if (row > 100 || col > 100) {
+      document.getElementsByClassName("result_8")[0].innerHTML = "Слишком большое число.";
+      return;
+    }
     for (var i = 0; i < row; i++) {
       res += "<div style='display: flex;flex-direction:row;'>";
       if (col%2 == 0) {
@@ -202,12 +228,18 @@ function t8() {
 
 function t9() {
   var resP = 0; resE = 0;
-  var f = parseInt(document.getElementById("numOfFlat").value);
-  var p = parseInt(document.getElementById("numOfP").value);
-  var e = parseInt(document.getElementById("numOfE").value);
-  var k = parseInt(document.getElementById("numOfK").value);
+  var f = document.getElementById("numOfFlat").value;
+  var p = document.getElementById("numOfP").value;
+  var e = document.getElementById("numOfE").value;
+  var k = document.getElementById("numOfK").value;
+  if (isNaN(+f) || isNaN(+p) || isNaN(+e) || isNaN(+k)) {
+    document.getElementsByClassName("result_9")[0].innerHTML =
+            "Вы ввели неправильные данные";
+    return;
+  }
   if ((p*k*e) < f) {
-    document.getElementsByClassName("result_9")[0].innerHTML = "That flat is not exists. Enter less value";
+    document.getElementsByClassName("result_9")[0].innerHTML =
+    "Этой квартиры не существует, введите меньшее число";
     return;
   }
   for (var i = 1; i <= p; i++) {
@@ -221,19 +253,25 @@ function t9() {
       }
     }
   }
-  document.getElementsByClassName("result_9")[0].innerHTML = "You live in " + resP + " entrance and " + resE + " floor!";
+  document.getElementsByClassName("result_9")[0].innerHTML =
+  "Вы живёте в подьезде по номером " + resP + ", на " + resE + " этаже!";
 }
 
 function t10() {
   var s = 0;
+  if (isNaN(+document.getElementById("num10").value)) {
+    document.getElementsByClassName("result_10")[0].innerHTML =
+            "Вы ввели неправильные данные";
+    return;
+  }
   var i = document.getElementById("num10").value.toString();
     for (var j = 0; j < i.length; j++) {
       s += (+(i).charAt(j));
     }
     if (!isNaN(s)) {
-      document.getElementsByClassName("result_10")[0].innerHTML = "Sum is " + s;
+      document.getElementsByClassName("result_10")[0].innerHTML = "Сумма = " + s;
     } else {
-      document.getElementsByClassName("result_10")[0].innerHTML = "Wrong input";
+      document.getElementsByClassName("result_10")[0].innerHTML = "Неверные данные";
     }
 }
 

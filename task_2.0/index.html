@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="styles.css">  
   <script src="scripts.js"></script>
   <title>JS TASK</title>
 </head>
@@ -26,29 +25,29 @@
   <div id="ht1">
     <p class="task">Task 1 - Сумма от -1000 до 1000</p>
     <button type="button" onclick="t1()" >Посчитать</button>
-    <p class="result_1"></p>
+    <p id="result_1"></p>
   </div>
   <div id="ht2">
     <p class="task">Task 2- Сумма от -1000 до 1000 c 2,3,7</p>
     <button type="button" onclick="t2()" >Посчитать</button>
-    <p class="result_2"></p>
+    <p id="result_2"></p>
   </div>
   <div id="ht3">
     <p class="task">Task 3 - 50 звездочек</p>
     <button type="button" onclick="t3()">Нарисовать</button>
-    <div class="result_3"></div>
+    <div id="result_3"></div>
   </div>
   <div id="ht4">
     <p class="task">Task 4 - Пользователь вводит время в секундах. Вывести в формате: hh:mm:ss</p>
     <input onfocus="this.value='';" type="text" id="sec_to_format_4" value="">
     <button type="button" onclick="t4()" id="button_sec_to_format_4" name="button">Format</button>
-    <p class="result_4"></p>
+    <p id="result_4"></p>
   </div>
   <div id="ht5">
     <p class="task">Task 5 - Для указанного возраста студента вывести фразу</p>
     <input type="text" id="years5">
     <button type="button" onclick="t5()" id="button_years5" name="button">Show</button>
-    <p class="result_5"></p>
+    <p id="result_5"></p>
   </div>
   <div id="ht6">
     <p class="task">Task 6 - Вычислить промежуток времени</p>
@@ -63,14 +62,14 @@
       <input type="time" step="1" id="endTime6">
     </div>
     <button type="button" onclick="t6()">Посчитать период</button>
-    <p class="result_6"></p>
+    <p id="result_6"></p>
   </div>
   <div id="ht7">
     <p class="task">Task 7 - Знаки зодиака</p>
-    <label for="zodiac7">ВВедите дату</label>
+    <label for="zodiac7">Введите дату</label>
     <input type="date" id="zodiac7">
     <button type="button" onclick="t7()">Показать знак зодиака</button>
-    <div class="result_7"></div>
+    <div id="result_7"></div>
   </div>
   <div id="ht8">
     <p class="task">Task 8 - Шахматная доска</p>
@@ -79,11 +78,11 @@
     <label for="col8"> и количество колонок</label>
     <input type="text" id="col8">
     <button type="button" onclick="t8()">Рисовать</button>
-    <div class="result_8"></div>
+    <div id="result_8"></div>
   </div>
   <div id="ht9">
     <p class="task">Task 9 - Определить номер подъезда и этаж по номеру квартиры</p>
-    <div style="border:1px solid #F00;display:flex;flex-direction:column;">
+    <div class="st">
       <label for="numOfP">Кол-во подъездов</label>
       <input type="text" id="numOfP" name="" value="10">
       <label for="numOfK"> Кол-во квартир на пролете</label>
@@ -96,20 +95,20 @@
       <input type="text" id="numOfFlat" name="" value="10">
     </div>
     <button type="button" onclick="t9()" id="button9">Показать</button>
-    <p class="result_9"></p>
+    <p id="result_9"></p>
   </div>
   <div id="ht10">
     <p class="task">Task 10 - Найти сумму цифр введённого числа</p>
     <input type="text" id="num10">
     <button type="button" onclick="t10()" id="button_find_sum10">Посчитать</button>
-    <p class="result_10"></p>
+    <p id="result_10"></p>
   </div>
   <div id="ht11">
     <p class="task">Task 11 - удалить http:// и https://
        из ссылок и вывести их отсортированным по алфавиту
         списком ссылок.</p>
     <textarea onfocus="this.value='';" rows="8" cols="80" onblur="t11()" id="links11">Введите ссылки через запятую</textarea>
-    <ul class="result_11"></ul>
+    <ul id="result_11"></ul>
   </div>
 </body>
 </html>

@@ -31,3 +31,7 @@ function chooseOptions(str) {
   $('.clearSelection').css('visibility', 'visible');
   $(".dispNone").slideToggle(500);
 }
+
+function onDivClick(element) {
+  chooseOptions($(element).find(".CSItem").html());
+}

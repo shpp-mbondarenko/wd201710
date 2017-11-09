@@ -12,57 +12,37 @@ function t1 () {
   document.getElementById("result_1").innerHTML = "Сумма = " + s;
 }
 
-// function t2 () { //// MY VARIANT IS FASTER!!!
+// function t2() {
 //   var t0 = performance.now();
 //   var a = -1000;
 //   var s = 0;
-//   while (a < 0) {
-//     a += 3;
-//     s += a;
-//     //console.log("a=" + a);
-//     a += 4;
-//     s += a;
-//     //console.log("a=" + a);
-//     a++;
-//     s += a;
-//     //console.log("a=" + a);
-//     a += 2;
-//     //console.log("a=" + a + "--------------");
-//   }
-//   while (a < 1000) {
-//     a += 2;
-//     s += a;
-//     //console.log("a=" + a);
-//     a += 1;
-//     s += a;
-//     //console.log("a=" + a);
-//     a += 4;
-//     s += a;
-//     //console.log("a=" + a);
-//     a += 3;
-//     //console.log("a=" + a + "--------------");
-//   }
-//   document.getElementById("result_2").innerHTML = "Сумма чисел зак. на 2,3,7 = " + s;
-//   var t1 = performance.now();
-//   console.log("Call to t2(my variant) took " + (t1 - t0) + " milliseconds.")
+//     while (a < 1000) {
+//       if (Math.abs(a%10) == 2 || Math.abs(a%10) == 3 || Math.abs(a%10) == 7) {
+//         s += a;
+//         // console.log("a="+a);
+//         a++;
+//       } else {
+//         a++;
+//       }
+//     }
+//     document.getElementById("result_2").innerHTML = "Сумма чисел зак. на 2,3,7 = " + s;
+//     var t1 = performance.now();
+//     console.log("Call to t2 took " + (t1 - t0) + " milliseconds.")
 // }
 
 function t2() {
   var t0 = performance.now();
-  var a = -1000;
-  var s = 0;
-    while (a < 1000) {
-      if (Math.abs(a%10) == 2 || Math.abs(a%10) == 3 || Math.abs(a%10) == 7) {
+  var a = -1000, s = 0, tmp = 0;
+    for (; a < 1000; a++) {  
+      tmp = (a % 10);
+      tmp = tmp < 0 ? tmp*(-1) : tmp;
+      if (tmp == 2 || tmp == 3 || tmp == 7) {
         s += a;
-        // console.log("a="+a);
-        a++;
-      } else {
-        a++;
-      }
+      } 
     }
-    document.getElementById("result_2").innerHTML = "Сумма чисел зак. на 2,3,7 = " + s;
-    var t1 = performance.now();
-    console.log("Call to t2 took " + (t1 - t0) + " milliseconds.")
+  var t1 = performance.now();
+  document.getElementById("result_2").innerHTML = "Сумма чисел зак. на 2,3,7 = " + s;
+  console.log("Call to t2 took " + (t1 - t0) + " milliseconds.")
 }
 
 function t3() {

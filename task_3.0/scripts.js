@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
   $(".dispNone").hide();
 
   $(".dispNone").hover(
@@ -15,6 +16,7 @@ function showOptions() {
   $(".dispNone").slideToggle(500);
 }
 
+//if mouse out of list
 function outOptions() {
     $(".dispNone").hide();
 }
@@ -25,13 +27,10 @@ function clearSelection() {
   $('#headImg').attr("src", "img\/pokeball.png");
 }
 
-function chooseOptions(str) {
+function onDivClick(element) {
+  let str = $(element).find(".CSItem").html();
   $('.chosenOption').text(str);
   $('#headImg').attr("src", "img\/"+str.toLowerCase()+".png");
   $('.clearSelection').css('visibility', 'visible');
   $(".dispNone").slideToggle(500);
-}
-
-function onDivClick(element) {
-  chooseOptions($(element).find(".CSItem").html());
 }

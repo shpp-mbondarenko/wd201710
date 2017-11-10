@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function(){
 function t1 () {
   var a = -1000;
   var s = 0;
-  while (a < 1001) {
+  while (a <= 1000) {
     s += a;
     a++;
   }

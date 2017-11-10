@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
+  <title>PHP TASK</title>
+</head>
+<body>
+	<div class="container">
+		<label for="formChoosePokemon">Choose your favorite Pokemon!</label>
+		<form id="formChoosePokemon" action="voteHondler.php" method="POST">			
+			<div>
+				<input id="radioPikachu" name="pikachu" type="radio" value="pikachu" checked>
+				<label for="radioPikachu">Pikachu</label>
+			</div>
+			<div>
+				<input id="radioBulbasaur" name="bulbasaur" type="radio" value="bulbasaur">
+				<label for="radioBulbasaur">Bulbasaur</label>
+			</div>
+			<div>
+				<input id="radioDiglett" name="diglett" type="radio" value="diglett">
+				<label for="radioDiglett">Diglett</label>
+			</div>	
+			<div>
+				<input id="radioCharmander" name="charmander" type="radio" value="charmander">
+				<label for="radioCharmander">Charmander</label>
+			</div>			
+			<input id="submit" type="submit" value="Vote!!!">
+		</form>
+	</div>	
+</body>
+</html>

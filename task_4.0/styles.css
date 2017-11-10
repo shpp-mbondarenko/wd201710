@@ -1,0 +1,47 @@
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;  
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 30px;
+  background-color: #62a3a7;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  border: 1px solid #fff;  
+  width: 50%;
+}
+
+.container > label {
+  display: flex;
+  justify-content: center;
+}
+
+#formChoosePokemon {
+  display: flex;
+  flex-direction: column;
+  width: auto;  
+  margin: 10px;
+}
+
+#submit {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 40px;
+  background-color: #62a3a7;
+  border: 2px solid #fff;
+  color: #ecf0f1;
+  border-radius: 5px;
+  font-size: 30px;
+  letter-spacing: -2px;  
+}

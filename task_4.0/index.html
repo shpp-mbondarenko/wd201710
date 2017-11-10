@@ -10,25 +10,25 @@
 <body>
 	<div class="container">
 		<label for="formChoosePokemon">Choose your favorite Pokemon!</label>
-		<form id="formChoosePokemon" action="voteHondler.php" method="POST">			
-			<div>
-				<input id="radioPikachu" name="pikachu" type="radio" value="pikachu" checked>
-				<label for="radioPikachu">Pikachu</label>
-			</div>
-			<div>
-				<input id="radioBulbasaur" name="bulbasaur" type="radio" value="bulbasaur">
-				<label for="radioBulbasaur">Bulbasaur</label>
-			</div>
-			<div>
-				<input id="radioDiglett" name="diglett" type="radio" value="diglett">
-				<label for="radioDiglett">Diglett</label>
-			</div>	
-			<div>
-				<input id="radioCharmander" name="charmander" type="radio" value="charmander">
-				<label for="radioCharmander">Charmander</label>
-			</div>			
+		<form id="formChoosePokemon" action="voteHandler.php" method="post">	
+				<div>
+					<input id="radioPikachu" name="choosePokemon" type="radio" value="pikachu" checked>
+					<label for="radioPikachu">Pikachu</label>
+				</div>
+				<div>
+					<input id="radioBulbasaur" name="choosePokemon" type="radio" value="bulbasaur">
+					<label for="radioBulbasaur">Bulbasaur</label>
+				</div>
+				<div>
+					<input id="radioDiglett" name="choosePokemon" type="radio" value="diglett">
+					<label for="radioDiglett">Diglett</label>
+				</div>
+				<div>
+					<input id="radioCharmander" name="choosePokemon" type="radio" value="charmander">
+					<label for="radioCharmander">Charmander</label>
+				</div>
 			<input id="submit" type="submit" value="Vote!!!">
 		</form>
-	</div>	
+	</div>
 </body>
 </html>

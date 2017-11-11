@@ -45,3 +45,7 @@ body {
   font-size: 30px;
   letter-spacing: -2px;  
 }
+
+#piechart {
+  width: 900px; height: 500px;
+}

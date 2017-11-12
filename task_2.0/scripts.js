@@ -2,14 +2,14 @@ document.addEventListener('DOMContentLoaded', function(){
 
 });
 
-function t1 () {
-  var a = -1000;
-  var s = 0;
-  while (a <= 1000) {
-    s += a;
-    a++;
+function countSum() {
+  var startNum = -1000;
+  var finalSum = 0;
+  while (startNum <= 1000) {
+    finalSum += startNum;
+    startNum++;
   }
-  document.getElementById("result_1").innerHTML = "Сумма = " + s;
+  document.getElementById("result_1").innerText = "Сумма = " + finalSum;
 }
 
 // function t2() {
@@ -25,45 +25,45 @@ function t1 () {
 //         a++;
 //       }
 //     }
-//     document.getElementById("result_2").innerHTML = "Сумма чисел зак. на 2,3,7 = " + s;
+//     document.getElementById("result_2").innerText = "Сумма чисел зак. на 2,3,7 = " + s;
 //     var t1 = performance.now();
 //     console.log("Call to t2 took " + (t1 - t0) + " milliseconds.")
 // }
 
-function t2() {
+function countSumEndWith237() {
   var t0 = performance.now();
-  var a = -1000, s = 0, tmp = 0;
-    for (; a < 1000; a++) {  
-      tmp = (a % 10);
-      tmp = tmp < 0 ? tmp*(-1) : tmp;
+  var startNum = -1000, finalSum = 0, tmp = 0;
+    for (; startNum < 1000; startNum++) {  
+      tmp = (startNum % 10);
+      tmp = tmp < 0 ? tmp * (-1) : tmp;
       if (tmp == 2 || tmp == 3 || tmp == 7) {
-        s += a;
+        finalSum += startNum;
       } 
     }
   var t1 = performance.now();
-  document.getElementById("result_2").innerHTML = "Сумма чисел зак. на 2,3,7 = " + s;
+  document.getElementById("result_2").innerText = "Сумма чисел зак. на 2,3,7 = " + finalSum;
   console.log("Call to t2 took " + (t1 - t0) + " milliseconds.")
 }
 
-function t3() {
+function drawStars() {
   var asterisk = "";
   var res = "";
   for (var i = 1; i <= 50; i++) {
     for (var j = 1; j <= i; j++) {
       asterisk += "* ";
     }
-    res += "<li>"+asterisk+"</li>";
+    res += "<li>" + asterisk + "</li>";
     asterisk = "";
   }
-  document.getElementById("result_3").innerHTML = "<ul>"+res+"</ul>";
+  document.getElementById("result_3").innerHTML = "<ul>" + res + "</ul>";
 }
 
-function t4() {
+function convertSeconds() {
   var hou = 0, min = 0, sec = 0, remainder = 0;
   //get val from input
   var i = document.getElementById("sec_to_format_4").value;
   if (i.length > 10) {
-      document.getElementById("result_4").innerHTML = "Слишком большое число";
+      document.getElementById("result_4").innerText = "Слишком большое число";
     return;
   }
   if(!isNaN(+(i))){
@@ -84,28 +84,28 @@ function t4() {
     if (hou < 10) { hou = "0" + hou.toString();    }
     if (min < 10) { min = "0" + min.toString();    }
     if (sec < 10) { sec = "0" + sec.toString();    }
-    document.getElementById("result_4").innerHTML =
+    document.getElementById("result_4").innerText =
     "Результат: " + hou + ":"+ min + ":" + sec;
   } else {
-    document.getElementById("result_4").innerHTML = "Неверные данные введены";
+    document.getElementById("result_4").innerText = "Неверные данные введены";
     return;
   }
 }
 
-function t5() {
+function showYears() {
   //get val from input
   var i = document.getElementById("years5").value;
   var word = "";
   var y = i;
   if (i.length > 3) {
-      document.getElementById("result_5").innerHTML = "Слишком большое число";
+      document.getElementById("result_5").innerText = "Слишком большое число";
     return;
   }
   if(!isNaN(+(i))){
     i = Math.abs(i);
     if (i >= 5 && i <= 21) {
       word = "год!";
-        document.getElementById("result_5").innerHTML = "Результат: Вам " + y + " " + word;
+        document.getElementById("result_5").innerText = "Результат: Вам " + y + " " + word;
         return;
     }
     i %= 10;
@@ -114,14 +114,14 @@ function t5() {
     } else {
       word = "год!";
     }
-    document.getElementById("result_5").innerHTML = "Результат: Вам " + y + " " + word;
+    document.getElementById("result_5").innerText = "Результат: Вам " + y + " " + word;
   } else {
-    document.getElementById("result_5").innerHTML = "Неверные данные";
+    document.getElementById("result_5").innerText = "Неверные данные";
     return;
   }
 }
 
-function t6() {
+function calculatePeriod() {
   var startDate, startTime, endTime, endDate;
   startDate = new Date(document.getElementById("startDate6").value);
   startTime = document.getElementById("startTime6").value;
@@ -129,7 +129,7 @@ function t6() {
   endDate = new Date(document.getElementById("endDate6").value);
   var years,mon,day,hou,min,sec;
   if (startDate.getFullYear() > 2200 || 2200 < endDate.getFullYear()) {
-    document.getElementById("result_6").innerHTML = "Слишком большой год";
+    document.getElementById("result_6").innerText = "Слишком большой год";
     return;
   }
   var startH = new Date("01/01/2007 " + startTime).getHours();
@@ -143,44 +143,32 @@ function t6() {
   var ed = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate(),
                       endH, endM, endS);
   var diff = ed - sd;
-  // console.log("разница - " +diff);
-  // console.log("ed - " +ed);
-  // console.log("sd - " +sd);
   if (ed < sd) {
     diff = sd - ed;
   }
-  // mon = Math.floor(diff/1000/60/60/24/30);
   years = Math.floor(diff / 1000 / 60 / 60 / 24 / 365);
-  // console.log("sec = "+sec+" min = " + min + " hou = " + hou + " days = "+ day +
-  // " month = "+mon+ " years = "+years);
   diff = diff - years * 1000 * 60 * 60 * 24 * 365;
-  // console.log("diff2="+diff);
   mon = Math.floor(diff / 1000 / 60 / 60 / 24 / 30);
   diff = diff - mon * 1000 * 60 * 60 * 24 * 30;
-  // console.log("diff3="+diff);
   day = Math.floor(diff / 1000 / 60 / 60 / 24);
   diff = diff - day * 1000 * 60 * 60 * 24;
-  // console.log("diff4="+diff);
   hou = Math.floor(diff / 1000 / 60 / 60);
   diff = diff - hou * 1000 * 60 * 60;
-  // console.log("diff5="+diff);
   min = Math.floor(diff / 1000 / 60);
   diff = diff - min * 1000 * 60;
-  // console.log("diff6="+diff);
   sec = Math.floor(diff / 1000);
   diff = diff - sec * 1000;
-  // console.log("diff7="+diff);
-  document.getElementById("result_6").innerHTML = "Разница: Год = " + years
-  + ", месяци = " + mon + ", дни = " + day + ", часы = " + hou + ", минуты = " + min + ", секунды = " + sec;
+  document.getElementById("result_6").innerText = "Разница: Год = " + years
+  + ", месяцы = " + mon + ", дни = " + day + ", часы = " + hou + ", минуты = " + min + ", секунды = " + sec;
 }
 
-function t7() {
+function showMyZodiac() {
   var date = new Date(document.getElementById("zodiac7").value);
   var img = "";
-  var zsign = "";
-  var z = ['Козерог','Водолей','Рыбы','Овен','Телец',
-            'Близнецы','Рак','Лев','Дева','Весы','Скорпион','Стрелец'];
-  var d = [19,19,20,20,21,21,22,23,23,22,22,21];
+  var zodiacName = "";
+  var z = ['Козерог', 'Водолей', 'Рыбы', 'Овен', 'Телец',
+            'Близнецы', 'Рак', 'Лев', 'Дева', 'Весы', 'Скорпион', 'Стрелец'];
+  var d = [19, 19, 20, 20, 21, 21, 22, 23, 23, 22, 22, 21];
   var mo = +date.getMonth();
   var day = +date.getDate();
   var dat = new Date();
@@ -189,47 +177,47 @@ function t7() {
   dat.setMonth(+mo);
   date = dat;
   if ( dat == "Invalid Date") {
-    document.getElementById("result_7").innerHTML = "Такой даты не существует!";
+    document.getElementById("result_7").innerText = "Такой даты не существует!";
     console.log("HI");
     return;
   }
-  zsign = z[mo];
+  zodiacName = z[mo];
   img = mo.toString();
   if (day > d[mo]) {
-    zsign = z[mo+1];
-    img = (mo+1).toString();
+    zodiacName = z[mo + 1];
+    img = (mo + 1).toString();
   }
   document.getElementById("result_7").innerHTML =
-   "<img height='42' width='42' src='img\/"+img+".png' alt='justtext'><p>"+zsign+"</p>";
+   "<img height='42' width='42' src='img\/" + img + ".png' alt='justtext'><p>" + zodiacName + "</p>";
 }
 
-function t8() {
+function drawChessBoard() {
     var res = "";
-    var b = true;
+    var boolVar = true;
     var wh = "<div class='chessW'></div>";
     var bl = "<div class='chessB'></div>";
     var row = document.getElementById("row8").value;
     var col = document.getElementById("col8").value;
     if (isNaN(+row) || isNaN(+col)) {
-      document.getElementById("result_8").innerHTML = "Вы ввели не число.";
+      document.getElementById("result_8").innerText = "Вы ввели не число.";
       return;
     }
     if (row > 100 || col > 100) {
-      document.getElementById("result_8").innerHTML = "Слишком большое число.";
+      document.getElementById("result_8").innerText = "Слишком большое число.";
       return;
     }
     for (var i = 0; i < row; i++) {
       res += "<div style='display: flex;flex-direction:row;'>";
-      if (col%2 == 0) {
-        b = !b;
+      if (col % 2 == 0) {
+        boolVar = !boolVar;
       }
       for (var j = 0; j < col; j++) {
-        if (b) {
+        if (boolVar) {
           res += bl;
-          b = !b;
+          boolVar = !boolVar;
         } else {
           res += wh;
-          b = !b;
+          boolVar = !boolVar;
         }
       }
       res += "</div>";
@@ -237,41 +225,41 @@ function t8() {
     document.getElementById("result_8").innerHTML = res;
 }
 
-function t9() {
-  var resP = 0; resE = 0;
+function findEntranceAndFlor() {
+  var resultEntrance = 0; resultFlor = 0;
   var f = document.getElementById("numOfFlat").value;
   var p = document.getElementById("numOfP").value;
   var e = document.getElementById("numOfE").value;
   var k = document.getElementById("numOfK").value;
   if (isNaN(+f) || isNaN(+p) || isNaN(+e) || isNaN(+k)) {
-    document.getElementById("result_9").innerHTML =
+    document.getElementById("result_9").innerText =
             "Вы ввели неправильные данные";
     return;
   }
-  if ((p*k*e) < f) {
-    document.getElementById("result_9").innerHTML =
+  if ((p * k * e) < f) {
+    document.getElementById("result_9").innerText =
     "Этой квартиры не существует, введите меньшее число";
     return;
   }
   for (var i = 1; i <= p; i++) {
-    if ((f <= (e*k*i)) && (f > (e*k*(i-1)))) {
-      resP = i;
+    if ((f <= (e * k * i)) && (f > (e * k * (i - 1)))) {
+      resultEntrance = i;
       for (var j = 1; j <= e; j++) {
-        var pp = e*k*(resP-1);
-        if (f <= pp+(k*j) && f > pp+(k*(j-1))) {
-          resE = j;
+        var pp = e * k * (resultEntrance - 1);
+        if (f <= pp + (k * j) && f > pp + (k * (j - 1))) {
+          resultFlor = j;
         }
       }
     }
   }
-  document.getElementById("result_9").innerHTML =
-  "Вы живёте в подьезде по номером " + resP + ", на " + resE + " этаже!";
+  document.getElementById("result_9").innerText =
+  "Вы живёте в подьезде по номером " + resultEntrance + ", на " + resultFlor + " этаже!";
 }
 
-function t10() {
+function sumOfNums() {
   var s = 0;
   if (isNaN(+document.getElementById("num10").value)) {
-    document.getElementById("result_10").innerHTML =
+    document.getElementById("result_10").innerText =
             "Вы ввели неправильные данные";
     return;
   }
@@ -280,13 +268,13 @@ function t10() {
       s += (+(i).charAt(j));
     }
     if (!isNaN(s)) {
-      document.getElementById("result_10").innerHTML = "Сумма = " + s;
+      document.getElementById("result_10").innerText = "Сумма = " + s;
     } else {
-      document.getElementById("result_10").innerHTML = "Неверные данные";
+      document.getElementById("result_10").innerText = "Неверные данные";
     }
 }
 
-function t11() {
+function editLinks() {
   var res = document.getElementById("links11").value.toString();
   res = res.replace(" ","");
   res = res.replace(/http(s?)\:\/\//gi, "");

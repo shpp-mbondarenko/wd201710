@@ -104,7 +104,7 @@ function showYears() {
   if(!isNaN(+(i))){
     i = Math.abs(i);
     if (i >= 5 && i <= 21) {
-      word = "год!";
+      word = "лет!";
         document.getElementById("result_5").innerText = "Результат: Вам " + y + " " + word;
         return;
     }
@@ -112,7 +112,7 @@ function showYears() {
     if (i == 2 || i == 3 || i == 4) {
       word = "года!";
     } else {
-      word = "год!";
+      word = "лет!";
     }
     document.getElementById("result_5").innerText = "Результат: Вам " + y + " " + word;
   } else {

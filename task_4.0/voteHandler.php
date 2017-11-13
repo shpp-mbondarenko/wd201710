@@ -4,8 +4,8 @@
 	try {
 	   //Get form data
 		$pokemon = "";
-	   if (isset($_POST['choosePokemon'])) {
-		$pokemon = $_POST['choosePokemon'];
+	   if (isset($_GET['pokemon'])) {
+		$pokemon = $_GET['pokemon'];
 	   }
 
 	   //Get data from existing json file

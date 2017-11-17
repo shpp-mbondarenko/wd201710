@@ -10,68 +10,68 @@
 </head>
 <body>
   <div style="display:flex;flex-direction: row;flex-wrap:wrap;justify-content:center;background-color:#ecf0f1">
-    <button type="button" onclick="showMe('ht1')">Task 1</button>
-    <button type="button" onclick="showMe('ht2')">Task 2</button>
-    <button type="button" onclick="showMe('ht3')">Task 3</button>
-    <button type="button" onclick="showMe('ht4')">Task 4</button>
-    <button type="button" onclick="showMe('ht5')">Task 5</button>
-    <button type="button" onclick="showMe('ht6')">Task 6</button>
-    <button type="button" onclick="showMe('ht7')">Task 7</button>
-    <button type="button" onclick="showMe('ht8')">Task 8</button>
-    <button type="button" onclick="showMe('ht9')">Task 9</button>
-    <button type="button" onclick="showMe('ht10')">Task 10</button>
-    <button type="button" onclick="showMe('ht11')">Task 11</button>
+    <button type="button" onclick="showMe('t1')">Task 1</button>
+    <button type="button" onclick="showMe('t2')">Task 2</button>
+    <button type="button" onclick="showMe('t3')">Task 3</button>
+    <button type="button" onclick="showMe('t4')">Task 4</button>
+    <button type="button" onclick="showMe('t5')">Task 5</button>
+    <button type="button" onclick="showMe('t6')">Task 6</button>
+    <button type="button" onclick="showMe('t7')">Task 7</button>
+    <button type="button" onclick="showMe('t8')">Task 8</button>
+    <button type="button" onclick="showMe('t9')">Task 9</button>
+    <button type="button" onclick="showMe('t10')">Task 10</button>
+    <button type="button" onclick="showMe('t11')">Task 11</button>
   </div>
-  <div id="ht1">
+  <div id="t1">
     <p class="task">Task 1 - Сумма от -1000 до 1000</p>
     <button type="button" onclick="countSum()" >Посчитать</button>
     <p id="result_1"></p>
   </div>
-  <div id="ht2">
+  <div id="t2">
     <p class="task">Task 2- Сумма от -1000 до 1000 c 2,3,7</p>
     <button type="button" onclick="countSumEndWith237()" >Посчитать</button>
     <p id="result_2"></p>
   </div>
-  <div id="ht3">
+  <div id="t3">
     <p class="task">Task 3 - 50 звездочек</p>
     <button type="button" onclick="drawStars()">Нарисовать</button>
     <div id="result_3"></div>
   </div>
-  <div id="ht4">
+  <div id="t4">
     <p class="task">Task 4 - Пользователь вводит время в секундах. Вывести в формате: hh:mm:ss</p>
     <input  type="text" title="время в секундах" id="sec_to_format_4" value="">
     <button type="button" onclick="convertSeconds()" id="button_sec_to_format_4" name="button">Format</button>
     <p id="result_4"></p>
   </div>
-  <div id="ht5">
+  <div id="t5">
     <p class="task">Task 5 - Для указанного возраста студента вывести фразу</p>
     <input type="text" id="years5">
     <button type="button" title="свой возраст" onclick="showYears()" id="button_years5" name="button">Show</button>
     <p id="result_5"></p>
   </div>
-  <div id="ht6">
+  <div id="t6">
     <p class="task">Task 6 - Вычислить промежуток времени</p>
     <div class="" style="background-color:#FFE082;">
       <label for="startDate6">Введите начальную дату и время</label>
       <input type="date" title="dd-mm-yyyy" id="startDate6">
-      <input type="time" title="hh-mm-ss" step="1" id="startTime6">
+      <input type="text" title="hh-mm-ss" step="1" id="startTime6" value="hh:mm:ss">
     </div>
     <div class="" style="background-color:#FFCC80;">
       <label for="endDate6">Введите конечную дату и время</label>
       <input type="date" title="dd-mm-yyyy" id="endDate6">
-      <input type="time" title="hh-mm-ss" step="1" id="endTime6">
+      <input type="text" title="hh-mm-ss" step="1" id="endTime6" value="hh:mm:ss">
     </div>
     <button type="button" onclick="calculatePeriod()">Посчитать период</button>
     <p id="result_6"></p>
   </div>
-  <div id="ht7">
+  <div id="t7">
     <p class="task">Task 7 - Знаки зодиака</p>
     <label for="zodiac7">Введите дату</label>
     <input type="date" id="zodiac7">
     <button type="button" title="виберите дату" onclick="showMyZodiac()">Показать знак зодиака</button>
     <div id="result_7"></div>
   </div>
-  <div id="ht8">
+  <div id="t8">
     <p class="task">Task 8 - Шахматная доска</p>
     <label for="row8">Введите количество рядов</label>
     <input type="text" title="к-во рядов" id="row8">
@@ -80,7 +80,7 @@
     <button type="button" onclick="drawChessBoard()">Рисовать</button>
     <div id="result_8"></div>
   </div>
-  <div id="ht9">
+  <div id="t9">
     <p class="task">Task 9 - Определить номер подъезда и этаж по номеру квартиры</p>
     <div class="st">
       <label for="numOfP">Кол-во подъездов</label>
@@ -97,17 +97,17 @@
     <button type="button" onclick="findEntranceAndFlor()" id="button9">Показать</button>
     <p id="result_9"></p>
   </div>
-  <div id="ht10">
+  <div id="t10">
     <p class="task">Task 10 - Найти сумму цифр введённого числа</p>
     <input type="text" title="введите цифры" id="num10">
     <button type="button" onclick="sumOfNums()" id="button_find_sum10">Посчитать</button>
     <p id="result_10"></p>
   </div>
-  <div id="ht11">
+  <div id="t11">
     <p class="task">Task 11 - удалить http:// и https://
        из ссылок и вывести их отсортированным по алфавиту
         списком ссылок.</p>
-    <textarea rows="8" cols="80" title="введите ссылки" onblur="editLinks()" id="links11">Введите ссылки через запятую</textarea>
+    <textarea rows="8" cols="80" title="Введите ссылки через запятую" onblur="editLinks()" id="links11"></textarea>
     <ul id="result_11"></ul>
   </div>
 </body>

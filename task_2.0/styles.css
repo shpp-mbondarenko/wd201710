@@ -19,7 +19,6 @@ body > div {
 
 .chessW {
   background-color: white;
-  border: 1px solid #0f0;
   margin: 0;
   padding: 0;
   height: 10px;
@@ -28,7 +27,6 @@ body > div {
 
 .chessB {
   background-color: black;
-  border: 1px solid #0f0;
   margin: 0;
   padding: 0;
   height: 10px;
@@ -45,6 +43,7 @@ background-color: #bdc3c7;
 }
 
 button {
+  cursor: pointer;
   margin-top: 20px;
   margin-bottom: 20px;
   width: auto;

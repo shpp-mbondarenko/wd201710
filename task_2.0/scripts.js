@@ -28,19 +28,21 @@ function countSumEndWith237() {
 function drawStars() {
   var asterisk = '';
   var res = '';
+  var list = document.createElement('ul');
   for (var i = 1; i <= 50; i++) {
     for (var j = 1; j <= i; j++) {
       asterisk += '* ';
     }
-    res += '<li>' + asterisk + '</li>';
+    var child = document.createElement('li');
+    child.innerText = asterisk;
+    list.appendChild(child);
     asterisk = '';
   }
-  document.getElementById('result_3').innerHTML = '<ul>' + res + '</ul>';
+  document.getElementById('result_3').appendChild(list);
 }
 //t4
 function convertSeconds() {
   var hou = 0, min = 0, sec = 0, remainder = 0;
-  //get val from input
   var input = document.getElementById('sec_to_format_4').value;
   if (input.length > 10) {
       document.getElementById('result_4').innerText = 'Слишком большое число';
@@ -72,28 +74,34 @@ function convertSeconds() {
 }
 //t5
 function showYears() {
-  //get val from input
   var input = document.getElementById('years5').value;
   var word = '';
-  var y = input;
+  var userInput = input;
   if (input.length > 3) {
       document.getElementById('result_5').innerText = 'Слишком большое число';
     return;
   }
   if(!isNaN(+(input))){
     input = Math.abs(input);
-    if (input >= 5 && input <= 21) {
+    if (input >= 5 && input <= 20) {
       word = 'лет!';
-        document.getElementById('result_5').innerText = 'Результат: Вам ' + y + ' ' + word;
+        document.getElementById('result_5').innerText = 'Результат: Вам ' + userInput + ' ' + word;
         return;
+    }
+    if (input == 1) {
+      document.getElementById('result_5').innerText = 'Результат: Вам ' + userInput + ' год!';
+      return;
     }
     input %= 10;
     if (input == 2 || input == 3 || input == 4) {
       word = 'года!';
     } else {
-      word = 'год!';
+      word = 'лет!';
     }
-    document.getElementById('result_5').innerText = 'Результат: Вам ' + y + ' ' + word;
+    if (input == 1) {
+        word = 'год!';
+    }
+    document.getElementById('result_5').innerText = 'Результат: Вам ' + userInput + ' ' + word;
   } else {
     document.getElementById('result_5').innerText = 'Неверные данные';
   }
@@ -115,9 +123,6 @@ function calculatePeriod() {
   }
   startDate = new Date(startDate);
   endDate = new Date(endDate);
-  console.log('sd=',startDate);
-  console.log('ed=',endDate);
-  console.log('start',new Date('01/01/2007 ' + startTime));
   var years, mon, day, hou, min, sec;
   if (startDate.getFullYear() > 2200 || 2200 < endDate.getFullYear()) {
     document.getElementById('result_6').innerText = 'Слишком большой год';
@@ -125,8 +130,6 @@ function calculatePeriod() {
   }
   var startT = new Date('01/01/2007 ' + startTime);
   var endT = new Date('01/01/2007 '+ endTime);
-  console.log('startT = ',startT);
-  console.log('endT = ',endT);
   var sd = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate(),
                       startT.getHours(), startT.getMinutes(), startT.getSeconds());
   var ed = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate(),

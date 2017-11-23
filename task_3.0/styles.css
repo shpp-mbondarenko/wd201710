@@ -55,12 +55,12 @@ p {
    color: #ecf0f1;
 }
 
-.options > .dispNone {
+.options > .hiddenOption {
   display: flex;
   flex-direction: row;
 }
 
-.dispNone:hover {
+.hiddenOption:hover {
   background: #7f8c8d;
   color: #ecf0f1;
 }

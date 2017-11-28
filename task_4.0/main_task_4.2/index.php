@@ -21,7 +21,7 @@
   }
   ?>
 
-  <h2>PHP Vote Form</h2>
+  <h2>Pokemon Vote Form</h2>
 
   <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
     <input name="choosePokemon" type="radio" value="pikachu" checked>Picachu
@@ -33,31 +33,32 @@
   </form>
 
   <?php
-  echo "<h2>Your Input:</h2>";
   echo $choosePokemon;
-  try {
-    $fileName = 'results.json';
-    $arr_data = array();
-  
-    //Get data from existing json file
-    $jsondata = file_get_contents($fileName);
-    echo "string" . $jsondata;
-    // converts json data into array
-    $arr_data = json_decode($jsondata, true);
+  if ($choosePokemon != '') {
+    try {
+      $fileName = 'results.json';
+      $arr_data = array();
+    
+      //Get data from existing json file
+      $jsondata = file_get_contents($fileName);
+      // converts json data into array
+      $arr_data = json_decode($jsondata, true);
 
-    $arr_data[$choosePokemon] = $arr_data[$choosePokemon] + 1;
+      $arr_data[$choosePokemon] = $arr_data[$choosePokemon] + 1;
 
-    //Convert updated array to JSON
-    $jsondata = json_encode($arr_data, JSON_PRETTY_PRINT);
+      //Convert updated array to JSON
+      $jsondata = json_encode($arr_data, JSON_PRETTY_PRINT);
 
-    //write json data into data.json file
-    if(file_put_contents($fileName, $jsondata)) {
-      echo 'Data successfully saved';
-    } else {
-      echo "error";
+      //write json data into data.json file
+      if(file_put_contents($fileName, $jsondata)) {
+          $url = 'chart.php';
+          header( "Location: $url" );
+      } else {
+        echo "error";
+      }
+    } catch (Exception $e) {
+      echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
-  } catch (Exception $e) {
-    echo 'Caught exception: ',  $e->getMessage(), "\n";
   }
   ?>
 </body>

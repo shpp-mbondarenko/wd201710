@@ -5,7 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="styles.css">
-  <title>PHP TASK</title>
+  <title>PHP TASK RESULTS</title>
+  <?php
+    try {
+      $fileName = 'results.json';
+      $arr_data = array();
+    
+      //Get data from existing json file
+      $jsondata = file_get_contents($fileName);
+      // converts json data into array
+      $arr_data = json_decode($jsondata, true);
+      //assign values
+      $pikachu = $arr_data['pikachu'];
+      $bulbasaur = $arr_data['bulbasaur'];
+      $diglett = $arr_data['diglett'];
+      $charmander = $arr_data['charmander'];
+      $magmar = $arr_data['magmar'];
+    } catch (Exception $e) {
+      echo 'Caught exception: ',  $e->getMessage(), "\n";
+    }
+  ?>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
 
@@ -15,12 +34,12 @@
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+          ['Pokemon', 'Quantity of votes'],
+          ['Pikachu',     <?php echo $pikachu ?>],
+          ['Bulbasaur',     <?php echo $bulbasaur ?>],
+          ['Diglett',     <?php echo $diglett ?>],
+          ['Charmander',     <?php echo $charmander ?>],
+          ['Magmar',     <?php echo $magmar ?>]
         ]);
 
         var options = {

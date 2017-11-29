@@ -13,12 +13,7 @@ body {
   justify-content: center;
 }
 
-body > div {
-  width: 100wh;
-  margin: 15px;
-  border-bottom: 1px solid #000;
-  display: none;
-}
+
 
 #topButtons {
   display: flex;
@@ -52,6 +47,22 @@ background-color: #bdc3c7;
 }
 
 button {
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 40px;
+  background-color: #31831c;
+  border: 2px solid #fff;
+  color: #ecf0f1;
+  border-radius: 5px;
+  font-size: 30px;
+  letter-spacing: -2px;
+}
+
+.buttonSubmit {
   cursor: pointer;
   margin-top: 20px;
   margin-bottom: 20px;

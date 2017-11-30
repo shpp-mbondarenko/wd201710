@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        var ATM = {
+            is_auth: false,
+            current_user: false,
+            current_type: false,
+
+            //variable where to store log of actions
+            atmLog: '',
+            // all cash of ATM
+            cash: 2000,
+            // all available users
+            users: [
+                { number: "0000", pin: "000", debet: 0, type: "admin" }, // EXTENDED
+                { number: "0025", pin: "123", debet: 675, type: "user" }
+                ],
+             //check if someone login in atm
+             checkIfUserLogin: function () {
+                if (!this.current_user) {
+                    console.log('Log in please!');
+                }
+                return this.current_user;
+            },
+            // authorization
+            auth: function (number, pin) {
+                for (let i = 0, len = this.users.length; i < len; i++) {
+                    let curUser = this.users[i];
+                    if (curUser.number === number && curUser.pin === pin) {
+                        this.current_user = curUser;
+                        this.current_type = curUser.type;
+                        this.atmLog += 'User(code:' + this.current_user.number + ') Func auth('+ number + ', ' + pin +')\n ';
+                        console.log('authorized!');
+                        console.log('user type -'+this.current_type);
+                        break;
+                    }
+                }
+                if (!this.current_user) {
+                    console.log('Wrong input number or pin!');
+                }
+            },
+            // check current debet
+            check: function () {
+                if (!this.checkIfUserLogin()) 
+                    return;
+                return this.current_user['debet'];
+            },
+            // get cash - available for user only
+            getCash: function (amount) {
+                if (!this.checkIfUserLogin()) 
+                    return;
+                if (amount == undefined) {
+                    console.log('Amount is empty!');
+                    return;
+                }
+                if (this.current_type === 'user') {
+                    if (this.current_user.debet >= amount && this.cash >= amount) {
+                        this.current_user.debet -= amount;
+                        this.cash -= amount;
+                        this.atmLog += 'User(code:' + this.current_user.number + ') Func getCash('+ amount + ')\n ';
+                        console.log('You get', amount, ' cash!');
+                    }
+                } else {
+                    console.log('Wrong user type! You have to be a "user"!');
+                }
+            },
+            // load cash - available for user only
+            loadCash: function (amount) {
+                if (!this.checkIfUserLogin()) 
+                    return;                
+                if (!amount)
+                    return console.log('Amount is empty!');
+                if (this.current_type !== 'user') 
+                    return console.log('Wrong user type! You have to be a "user"!');
+                if (amount > 0 && !isNaN(amount)) {
+                    this.current_user.debet += amount;
+                    this.cash += amount;
+                    this.atmLog += 'User(code:' + this.current_user.number + ') Func loadCash('+ amount + ')\n ';
+                    console.log('You loaded ' + amount + ' cash!');
+                }
+            },
+            // load cash to ATM - available for admin only - EXTENDED
+            load_cash: function (addition) {
+                if (!this.checkIfUserLogin()) 
+                    return;
+                if (this.current_type !== 'admin') 
+                    return console.log('Wrong user type! You have to be a "admin"!');
+                if (!addition || addition <= 0)
+                    return console.log('Addition is empty or equal to "0"!');
+                this.cash += addition;
+                this.atmLog += 'Admin(code:' + this.current_user.number + ') Func load_cash('+ addition + ')\n ';
+                console.log('You loaded ' + amount + ' cash!');
+            },
+            // get report about cash actions - available for admin only - EXTENDED
+            getReport: function () {
+                if (!this.checkIfUserLogin()) 
+                    return;
+                if (this.current_type !== 'admin') 
+                    return console.log('Wrong user type! You have to be a "admin"!');
+                console.log(this.atmLog);
+            },
+            // log out
+            logout: function () {
+                if (this.current_user) {
+                    this.is_auth = this.current_user = this.current_type = false;
+                    console.log('You are logout! GoodBye!');
+                } else {
+                    console.log('You are not logined!');
+                }
+            }
+
+        };
+    </script>
+</head>
+
+<body></body>
+
+</html>

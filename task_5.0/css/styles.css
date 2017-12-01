@@ -1,3 +1,94 @@
-div {
-  border: 1px solid #eada7d;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat Alternates', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+#colorStripes {
+  width: 100%;
+  height: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#container {
+  height: 90%;
+  width: auto;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+#logo {
+  font-size: 70px;
+  color: #fffecd;
+  font-family: 'Pacifico', cursive;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+.mainBackground {
+  background-color: #9bc783;
+}
+.mainButton {
+  background-color: #635960;
+  font-size: 20px;
+  border: none;
+  color: #fffecd;
+  padding: 5px;
+  width: 60%;
+}
+.inputField {
+  font-family: 'Montserrat Alternates', sans-serif;
+  background-color: #fffecd;
+  padding: 5px;
+  border: none;
+  width: 100%;
+}
+#formContainer {
+  padding: 10px;
+  text-align: center;
+  width: 50%;
+  display: inline-block;
+}
+form > p {
+  color: #635960;
+  font-size: 12px;
+  text-align: left;
+  padding-bottom: 2px;
+}
+form {
+  width: 100%;
+}
+.headerLineProp {
+  width: 10%;
+  height: inherit;
+}
+.headerLineColor1 {
+  width: 10%;
+  height: inherit;
+  background-color: #635960;
+}
+.headerLineColor2 {
+  width: 10%;
+  height: inherit;
+  background-color: #8b8e59;
+}
+.headerLineColor3 {
+  width: 10%;
+  height: inherit;
+  background-color: #eada7d;
+}
+.headerLineColor4 {
+  width: 10%;
+  height: inherit;
+  background-color: #fffecd;
+}
+.headerLineColor5 {
+  width: 10%;
+  height: inherit;
+  background-color: #7bc3ab;
 }

@@ -1,5 +1,113 @@
-@colorr:#eada7d;
+@headerLineColor1:#635960;
+@headerLineColor2:#8b8e59;
+@headerLineColor3:#eada7d;
+@headerLineColor4:#fffecd;
+@headerLineColor5:#7bc3ab;
+@logoColor:#fffecd;
+@inputTagColor:#fffecd;
+@buttonBackgroundColor:#635960;
+@fontColor:#635960;
+@mainBackgroundColor:#9bc783;
+@colorStripesHeight:10px;
+@padding:10px;
 
-div {
-  border: 1px solid @colorr;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat Alternates', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+#colorStripes {
+  width: 100%;
+  height: @colorStripesHeight;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#container {
+  height: 100% - @colorStripesHeight;
+  width: auto;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+#logo {
+  font-size: 70px;
+  color: @logoColor;
+  font-family: 'Pacifico', cursive;
+  padding-bottom: @padding * 3;
+  padding-top: @padding * 3;
+}
+.mainBackground {
+  background-color: @mainBackgroundColor;
+}
+
+.mainButton {
+  background-color: @buttonBackgroundColor;
+  font-size: 20px;
+  border: none;
+  color: @logoColor;
+  padding: @padding / 2;
+  width: 60%;
+}
+
+.inputField {
+  font-family: 'Montserrat Alternates', sans-serif;
+  background-color: @inputTagColor;
+  padding: @padding / 2;
+  border: none;
+  width: 100%;
+}
+
+#formContainer {
+    padding: @padding;
+    text-align: center;
+    width: 100%/2;
+    display: inline-block;
+}
+
+form > p {
+  color: @fontColor;
+  font-size: 12px;
+  text-align: left;
+  padding-bottom: 2px;
+}
+
+form {
+  width: 100%;
+}
+
+.headerLineProp {
+  width: 100% / 10;
+  height: inherit;
+}
+
+.headerLineColor1 {
+  .headerLineProp;
+  background-color: @headerLineColor1;
+}
+.headerLineColor2 {
+  .headerLineProp;
+  background-color: @headerLineColor2;
+}
+.headerLineColor3 {
+  .headerLineProp;
+  background-color: @headerLineColor3;
+}
+.headerLineColor4 {
+  .headerLineProp;
+  background-color: @headerLineColor4;
+}
+.headerLineColor5 {
+  .headerLineProp;
+  background-color: @headerLineColor5;
 }

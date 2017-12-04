@@ -35,6 +35,7 @@ body {
 #container {
   height: 100% - @colorStripesHeight;
   width: auto;
+  border: 1px solid #fff;
   display: inline-block;
   margin: 0;
   padding: 0;
@@ -47,6 +48,12 @@ body {
   padding-bottom: @padding * 3;
   padding-top: @padding * 3;
 }
+
+#sendMessage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .mainBackground {
   background-color: @mainBackgroundColor;
 }
@@ -58,6 +65,15 @@ body {
   color: @logoColor;
   padding: @padding / 2;
   width: 60%;
+}
+
+.buttonSend {
+  .mainButton;
+  width: auto;
+  margin-left: @padding;
+  font-size: 14px;
+  padding-left: @padding * 2;
+  padding-right: @padding * 2;
 }
 
 .inputField {
@@ -73,6 +89,13 @@ body {
     text-align: center;
     width: 100%/2;
     display: inline-block;
+}
+
+#messagesArea {
+  background-color: @inputTagColor;
+  width: inherit;
+  height: 40%;
+  margin-bottom: @padding;
 }
 
 form > p {

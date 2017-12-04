@@ -1,0 +1,10 @@
+{
+  "u1":{
+    "name":"Mike",
+    "password":"123456"
+  },
+  "u2":{
+    "name":"Max",
+    "password":"1234"
+  }
+}

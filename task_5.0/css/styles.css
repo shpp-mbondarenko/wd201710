@@ -19,6 +19,7 @@ body {
 #container {
   height: 90%;
   width: auto;
+  border: 1px solid #fff;
   display: inline-block;
   margin: 0;
   padding: 0;
@@ -30,6 +31,11 @@ body {
   padding-bottom: 30px;
   padding-top: 30px;
 }
+#sendMessage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .mainBackground {
   background-color: #9bc783;
 }
@@ -40,6 +46,19 @@ body {
   color: #fffecd;
   padding: 5px;
   width: 60%;
+}
+.buttonSend {
+  background-color: #635960;
+  font-size: 20px;
+  border: none;
+  color: #fffecd;
+  padding: 5px;
+  width: 60%;
+  width: auto;
+  margin-left: 10px;
+  font-size: 14px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .inputField {
   font-family: 'Montserrat Alternates', sans-serif;
@@ -53,6 +72,12 @@ body {
   text-align: center;
   width: 50%;
   display: inline-block;
+}
+#messagesArea {
+  background-color: #fffecd;
+  width: inherit;
+  height: 40%;
+  margin-bottom: 10px;
 }
 form > p {
   color: #635960;

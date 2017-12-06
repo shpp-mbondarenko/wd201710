@@ -12,33 +12,36 @@ p {
   padding: 5px;
 }
 
-.container {
-  width: 100%;
+#container {
+  width: auto;
   background-color: #4E342E;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: top;
   align-items:flex-start;
   min-height: 100vh;
 }
 
-.customSelect {
+h2 {
+  color: #ecf0f1;
+  background-color: #4E342E;
+  margin-bottom: 5px;
+  text-align: center;
+}
+#customSelect {
   background-color: #ecf0f1;
   border-radius: 3px;
   width: 300px;
   height: auto;
   color: #7f8c8d;
-
-  margin-top: 200px;
+  margin-top: 30px;
+  cursor: pointer;
 }
 
 
 .chosenOption {
   text-align: left;
   width: 100%;
-}
-
-.CSItem {
-
 }
 
 .CSHeader {

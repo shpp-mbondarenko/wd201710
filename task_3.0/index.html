@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="shortcut icon" href="img/b.jpg" type="image/jpg">
+  <link rel="shortcut icon" href="img/b.jpg" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="scripts.js"></script>
   <title>My Custom View</title>
 </head>
+
 <body>
   <div id="container">
+    <div id="customSelect">
+      <h2>Custom select</h2>
+      <div class="CSHeader">
+        <img id="headImg" src="img/pokeball.png">
+        <p class="chosenOption clickable" onclick="showOptions()">Choose item...</p>
+        <p class="clearSelection" onclick="clearSelection()">&#215;</p>
+        <p class="clickable" onclick="showOptions()">&#9660;</p>
+      </div>
+
+    </div>
   </div>
 </body>
+
 </html>

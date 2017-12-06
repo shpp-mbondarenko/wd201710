@@ -1,19 +1,33 @@
-$(document).ready(function(){
+$(document).ready(function () {
   var arr = ['item1', 'item2', 'item3', 'item4', 'item5'];
-  var container = $('#container');
+  var container = $('#customSelect');
   createSelect(arr, container);
 
   $('.hiddenOption').hide();
 
+  //if user clicks out of custom select when cs is visible
+  $("body").click(function (event) {
+    if (!$(event.target).is('.hiddenOption')
+      && !$(event.target).is('.clickable')
+      && !$(event.target).is('#headImg')) {
+      if ($('.hiddenOption').is(':visible')) {
+        $('.hiddenOption').slideToggle(500);
+        console.log('in body');
+      }
+    }
+  });
+
+  $('#headImg').click(function (event) {
+    showOptions();
+  });
+
+  $('.hiddenOption').click(function (event) {
+    onOptionClick(event.target);
+  })
+
   $('.hiddenOption').hover(
-    function() {
-      $('.greyimg', this).removeClass(function() {
-        return $( this ).attr( "class" )
-      }).addClass('nogreyimg');
-    }, function() {
-      $('.nogreyimg', this).removeClass(function() {
-        return $( this ).attr( "class" )
-      }).addClass('greyimg');
+    function () {
+      $('.greyimg', this).toggleClass('nogreyimg');
     }
   );
 
@@ -22,31 +36,23 @@ $(document).ready(function(){
 //arr - input data
 //parent in which container to put select
 function createSelect(arr, parent) {
-  //create header of select
-  var customSelectDiv = $('<div class="customSelect"></div>');
-  var cSHeaderDiv = $('<div class="CSHeader"></div>');
-  cSHeaderDiv.append('<img id="headImg" src="img/pokeball.png">');
-  cSHeaderDiv.append('<p class="chosenOption clickable" onclick="showOptions()">Choose item...</p>');
-  cSHeaderDiv.append('<p class="clearSelection" onclick="clearSelection()">&#215;</p>');
-  cSHeaderDiv.append('<p class="clickable" onclick="showOptions()">&#9660;</p>');
-  customSelectDiv.append(cSHeaderDiv);
   //add elements to custom select
   var optionsDiv = $('<div class="options"></div>');
   for (var i = 0, len = arr.length; i < len; i++) {
-    var itemDiv = $('<div class="hiddenOption" onclick="onOptionClick(this)"></div>');
+    var itemDiv = $('<div class="hiddenOption" ></div>');
     itemDiv.append('<img class="greyimg" src="img/pikachu.png">');
-    itemDiv.append('<p onclick="" class="CSItem">' + arr[i] +'</p>');
+    itemDiv.append('<p class="CSItem">' + arr[i] + '</p>');
     optionsDiv.append(itemDiv);
   }
-  customSelectDiv.append(optionsDiv);
-  parent.append(customSelectDiv);
+  parent.append(optionsDiv);
   parent.addClass('container');
 }
 
 function showOptions() {
+  console.log('in func');
   $('.clickable').prop('onclick', null).off('click');
   $('.hiddenOption').slideToggle(500);
-  window.setTimeout(function() {
+  window.setTimeout(function () {
     $('.clickable').click(showOptions);
   }, 500);
 }

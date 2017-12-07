@@ -13,6 +13,7 @@ try {
   //put new data
   $newUser = array();
   $newUser['name'] = $user;
+  echo $user;
   $newUser['password'] = $pswd;
   $str = count($arr_data)+'';
   $arr_data[$str] = $newUser;

@@ -10,6 +10,10 @@
 @mainBackgroundColor:#9bc783;
 @colorStripesHeight:10px;
 @padding:10px;
+@messageToMeBackground:#9bc783;
+@myMessageBackground:#eada7d;
+@messageAreaHeight:400px;
+@borderRadius: 5px;
 
 * {
   margin: 0;
@@ -32,11 +36,66 @@ body {
   justify-content: space-between;
 }
 
+.messagesArea {
+  background-color: @inputTagColor;
+  width: inherit;
+  height: @messageAreaHeight;
+  max-height: @messageAreaHeight;
+  margin-bottom: @padding;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: @borderRadius;
+}
+
+.messageToMe {
+  background-color: @inputTagColor;
+  width: inherit;
+  height: fit-content;
+  display: flex;
+  justify-content: flex-start;  
+}
+
+.messageToMe p {
+  background-color: @messageToMeBackground;
+  width: fit-content;
+  max-width: 80%; 
+  height: fit-content; 
+  border-radius: @borderRadius;
+  margin: 3px;
+  padding: 3px;
+  text-align: left;
+  word-break: break-all;
+  word-wrap:break-word;
+}
+
+.myMessage {
+  width: inherit;
+  height: fit-content;
+  background-color: @inputTagColor;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.myMessage p {
+  background-color: @myMessageBackground;
+  width: fit-content;
+  max-width: 80%;
+  height: fit-content;
+  border-radius: @borderRadius;
+  margin: 3px;
+  padding: 3px;
+  text-align: right;
+  word-break: break-all;
+  word-wrap:break-word;
+}
+
+
 #container {
   height: 100% - @colorStripesHeight;
   width: auto;
   max-width: 50%;
-  border: 1px solid #fff;
+  // border: 1px solid #fff;
   display: inline-block;
   margin: 0;
   padding: 0;
@@ -92,12 +151,6 @@ body {
     display: inline-block;
 }
 
-#messagesArea {
-  background-color: @inputTagColor;
-  width: inherit;
-  height: 40%;
-  margin-bottom: @padding;
-}
 .formContainer > p {
   color: @fontColor;
   font-size: 12px;

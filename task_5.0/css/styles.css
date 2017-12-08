@@ -16,11 +16,59 @@ body {
   flex-direction: row;
   justify-content: space-between;
 }
+.messagesArea {
+  background-color: #fffecd;
+  width: inherit;
+  height: 400px;
+  max-height: 400px;
+  margin-bottom: 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: 5px;
+}
+.messageToMe {
+  background-color: #fffecd;
+  width: inherit;
+  height: fit-content;
+  display: flex;
+  justify-content: flex-start;
+}
+.messageToMe p {
+  background-color: #9bc783;
+  width: fit-content;
+  max-width: 80%;
+  height: fit-content;
+  border-radius: 5px;
+  margin: 3px;
+  padding: 3px;
+  text-align: left;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.myMessage {
+  width: inherit;
+  height: fit-content;
+  background-color: #fffecd;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+.myMessage p {
+  background-color: #eada7d;
+  width: fit-content;
+  max-width: 80%;
+  height: fit-content;
+  border-radius: 5px;
+  margin: 3px;
+  padding: 3px;
+  text-align: right;
+  word-break: break-all;
+  word-wrap: break-word;
+}
 #container {
   height: 90%;
   width: auto;
   max-width: 50%;
-  border: 1px solid #fff;
   display: inline-block;
   margin: 0;
   padding: 0;
@@ -73,12 +121,6 @@ body {
   text-align: center;
   width: 50%;
   display: inline-block;
-}
-#messagesArea {
-  background-color: #fffecd;
-  width: inherit;
-  height: 40%;
-  margin-bottom: 10px;
 }
 .formContainer > p {
   color: #635960;

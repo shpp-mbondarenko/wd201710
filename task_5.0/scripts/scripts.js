@@ -10,6 +10,7 @@ $(document).ready(function () {
 function login() {
   // show spining stuff - will come soon
   let user = $('#inputName').val().replace(' ', ''), pswd = $('#inputPassword').val().replace(' ', '');
+  log('user =' + user);
   var isFindUser = false;
   if (user == '' || pswd == '') {
     showHint('Empty user name or password..');
@@ -23,7 +24,7 @@ function login() {
     }
     for (let i = 0, len = obj.length; i < len; i++) {
       log('i= ' + i + 'obj=' + obj[i].name);
-      if (user === obj[i].name && pswd === obj[i].password) {
+      if (user == obj[i].name && pswd == obj[i].password) {
         showHint('You are login!');
         //setting up  cookie
         setCookie('user', user);
